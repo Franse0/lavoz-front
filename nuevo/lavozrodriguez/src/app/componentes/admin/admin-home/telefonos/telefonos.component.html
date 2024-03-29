@@ -1,0 +1,27 @@
+<app-back-home></app-back-home>
+
+<form action="" class="form-admin" enctype="multipart/form-data" [formGroup]="formAdmin">
+    <legend>Formulario de Telefonos importantes</legend>
+
+    <div class="form-input">
+        <label for="id">Id</label>
+        <input type="number" placeholder="Id" id="id" formControlName="id">
+    </div>
+    <div class="form-input">
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Nombre" id="nombre" formControlName="nombre">
+    </div>
+    <div class="form-input">
+        <label for="tel-prin">Telefono principal</label>
+        <input type="phone" placeholder="Telefono principal" id="tel-prin" formControlName="telefono_prin">
+    </div>
+    <div class="form-input">
+        <label for="telefonos">Telefonos</label>
+        <input type="text" placeholder="Telefonos" id="telefonos" formControlName="telefonos">
+    </div>
+    <div class="form-input">
+        <label for="ubicacion-maps">Ubiacion Maps</label>
+        <input type="text" placeholder="Ubicacion Maps" id="ubicacion-maps" formControlName="ubicacion_map">
+    </div>
+    <button type="submit" (click)="cargarTelefono()">Cargar</button>
+</form>

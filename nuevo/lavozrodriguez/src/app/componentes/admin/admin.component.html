@@ -1,0 +1,13 @@
+<section class="admin">
+    <form  class="form-admin">
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input type="mail" placeholder="Email"  id="email" #email required> 
+        </div>
+        <div class="form-input">
+            <label for="password">Clave</label>
+            <input type="password" placeholder="clave" id="password" #password required>
+        </div>
+        <button type="submit" (click)="logIn(email.value, password.value)" >Ingresar</button>
+    </form>
+</section>

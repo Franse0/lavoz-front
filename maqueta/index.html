@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavoz</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="all-container">
+        <div class="header-container">
+          <div class="widget-container dolar">
+            <span class="span">DOLAR HOY</span>
+            <table>
+              <tr>
+                <th>COMPRA</th>
+                <th>VENTA</th>
+              </tr>
+              <tr>
+                <th>$1000</th>
+                <th>$1020</th>
+              </tr>
+            </table>
+          </div>
+          <a href="">
+            <div class="logo-container">
+              <h1><span>...</span>LA VOZ<span>...</span></h1>
+            </div>
+          </a>
+          <div class="widget-container">
+            <span>24 de MArzo de 2024</span>
+            <div class="temp-container">
+              <div>
+                <i class="fa-solid fa-cloud">21°C</i>
+              </div>
+              <div>
+                <i class="fa-solid fa-temperature-low">39%</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-container">
+          <i class="fa-solid fa-bars" onclick="menu()"></i>
+          <ul class="nav-links">
+            <li class="nav-items"><a href="">NOTICIAS</a></li>
+            <li class="nav-items"><a href="">GUIA TELEFONICA</a></li>
+            <li class="nav-items"><a href="">FARMACIA 24HS</a></li>
+            <li class="nav-items"><a href="">COMERCIOS</a></li>
+          </ul>
+          <i class="fa-solid fa-search"></i>
+        </div>
+      </nav>
+    </header>
+
+    <div class="menu-container" id="menu-container">
+      <ul class="menu">
+        <div>
+          <div>
+            <li onclick="mostrarMenu('noticias')" class="enlace">
+              <i class="fa-solid fa-caret-right"></i>Noticias
+            </li>
+            <ul class="submenu" id="noticias">
+              <li>Cultura</li>
+              <li>Educacion</li>
+              <li>Salud</li>
+              <li>Seguridad</li>
+            </ul>
+          </div>
+          <div>
+            <li onclick="mostrarMenu('guia')" class="enlace">
+              <i class="fa-solid fa-caret-right"></i>Guia Telefonica
+            </li>
+            <ul class="submenu" id="guia">
+              <li>Cultura y educacion</li>
+              <li>Personas, seguridad social e impuestos</li>
+              <li>Salud</li>
+              <li>Seguridad</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <!-- Este capaz puede ser sacado para evitar ser redundante -->
+            <li><i class="fa-solid fa-caret-right"></i>Farmacia 24 horas</li>
+          </div>
+          <div>
+            <li onclick="mostrarMenu('comercios')" class="enlace">
+              <i class="fa-solid fa-caret-right"></i>Comercios
+            </li>
+            <ul class="submenu" id="comercios">
+              <li>Bar/Restaurante</li>
+              <li>Cafeteria</li>
+              <li>Centros deportivos</li>
+              <li>Correo</li>
+              <li>Ferretieria</li>
+              <li>Pago Facil/Rapipago</li>
+              <li>Vaterinaria</li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+
+
+    
+    <main>
+      <section class="principal-home ">
+        <a class="card-noticia enlace">
+          <div class="img-container">
+            <img src="./dengue.jpg" alt=""  class="img"/> 
+          </div>
+          <div class="category-info">
+            <p><span>Noticia</span>Noticia</p>
+          </div>
+          <div class="fecha">
+            <p>15 de marzo de 2024</p>
+          </div>
+
+          <div class="overflow"></div>
+          <div class="info-noticia">
+            <h2>Dengue: Aumentaron los casos en el hospital</h2>
+           <p  class="parrafo-descrip-card-pequeña">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
+            error.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
+            error.
+           </p> 
+          </div>
+        </a>
+        <a class="card-noticia enlace">
+          <div class="img-container">
+            <img src="./dengue.jpg" alt=""  class="img"/> 
+          </div>
+          <div class="category-info">
+            <p><span>Noticia</span>Noticia</p>
+          </div>
+          <div class="fecha">
+            <p>15 de marzo de 2024</p>
+          </div>
+
+          <div class="overflow"></div>
+          <div class="info-noticia">
+            <h2>Dengue: Aumentaron los casos en el hospital</h2>
+           <p  class="parrafo-descrip-card-pequeña">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
+            error.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
+            error.
+           </p> 
+          </div>
+        </a>
+      </section>
+      
+    </main>
+  </body>
+
+  <script src="./main.js"></script>
+</html>

@@ -1,0 +1,46 @@
+<app-back-home></app-back-home>
+
+<form action="" class="form-admin" [formGroup]="formAdmin" (submit)="cargarLocal()">
+    <legend>Formulario de Lugares</legend>
+    <div class="form-input">
+        <label for="id">Id</label>
+        <input type="number" placeholder="Id" id="id" formControlName="id">
+    </div>
+    <div class="form-input">
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Nombre" id="nombre" formControlName="nombre">
+    </div>
+    <div class="form-input">
+        <label for="telefono">Telefono</label>
+        <input type="phone" placeholder="Telefono" id="telefono" formControlName="telefono">
+    </div>
+    <div class="form-input">
+        <label for="ubicacion">Ubicacion</label>
+        <input type="text" placeholder="Ubicacion" id="ubicacion" formControlName="ubicacion">
+    </div>
+    <div class="form-input">
+        <label for="maps">Ubicacion Maps</label>
+        <input type="text" placeholder="Ubicacion Maps" id="maps" formControlName="ubicacion_map">
+    </div>
+    <div class="form-input">
+        <label for="horario">Horario</label>
+        <input type="text" placeholder="Horario" id="Horario" formControlName="horario">
+    </div>
+    <div class="form-input">
+        <label for="img">Imagenes</label>
+        <input type="text" placeholder="Imagenes" id="img" formControlName="img">
+    </div>
+    <div class="form-input">
+        <label for="ruta-img">Ruta de imagen</label>
+        <input type="text" placeholder="Ruta de imagen" id="ruta-img" formControlName="ruta_img">
+    </div>
+    <div class="form-input">
+        <label for="instagram">Instagram</label>
+        <input type="text" placeholder="Instagram" id="instagram" formControlName="instagram">
+    </div>
+    <div class="form-input">
+        <label for="facebook">Facebook</label>
+        <input type="text" placeholder="Facebook" id="facebook" formControlName="facebook">
+    </div>
+    <button type="submit">Ingresar</button>
+</form>

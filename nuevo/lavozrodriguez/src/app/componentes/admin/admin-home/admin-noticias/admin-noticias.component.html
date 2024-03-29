@@ -1,0 +1,34 @@
+<app-back-home></app-back-home>
+
+<form action="" class="form-admin" enctype="multipart/form-data" [formGroup]="formAdmin">
+    <legend>Formulario de Noticias</legend>
+    <div class="form-input">
+        <label for="id">Id</label>
+        <input type="number" placeholder="Id" id="id" formControlName="id">
+    </div>
+    <div class="form-input">
+        <label for="titulo">Titulo</label>
+        <input type="text" placeholder="Titulo" id="titulo" id="id" formControlName="titulo">
+    </div>
+    <div class="form-input">
+        <label for="cuerpo">Cuerpo</label>
+        <textarea name="cuerpo" id="cuerpo" cols="30" rows="8" id="id" formControlName="cuerpo"></textarea>
+    </div>
+    <div class="form-input">
+        <label for="resumen">Resumen</label>
+        <input type="text" name="resumen" id="" cols="10" rows="5" id="id" formControlName="resumen">
+    </div>
+    <div class="form-input">
+        <label for="fecha">Fecha</label>
+        <input type="text" placeholder="Fecha" id="fecha" id="id" formControlName="fecha_publi">
+    </div>
+    <div class="form-input">
+        <label for="img">Imagen</label>
+        <input type="text" placeholder="Imagen" id="img" id="id" formControlName="img">
+    </div>
+    <div class="form-input">
+        <label for="ruta-img">Ruta imagen</label>
+        <input type="text" placeholder="Ruta imagen" id="ruta-img" id="id" formControlName="url_img">
+    </div>
+    <button type="submit" (click)="cargarNoticia()">Cargar</button>
+</form>

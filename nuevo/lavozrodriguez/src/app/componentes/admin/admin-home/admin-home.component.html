@@ -1,0 +1,16 @@
+<section class="admin">
+    <form action="" class="form-admin">
+        <button (click)="logOut()">LogOut</button>
+    </form>
+    <form class="form-admin">
+        <a  [routerLink]="['/admin-noticias']">
+            <button>Noticias</button>
+        </a>
+        <a  [routerLink]="['/admin-lugares']">
+            <button>Lugares</button>
+        </a>
+        <a  [routerLink]="['/admin-telefonos']">
+            <button>Telefono</button>
+        </a>
+    </form>
+</section>
