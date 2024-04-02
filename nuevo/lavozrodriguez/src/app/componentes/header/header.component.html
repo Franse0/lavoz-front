@@ -1,0 +1,102 @@
+<header class="header">
+  <div class="all-container">
+    <div class="header-container">
+      <div class="widget-container dolar">
+        <span class="span">DOLAR HOY</span>
+        <table>
+          <tr>
+            <th>COMPRA</th>
+            <th>VENTA</th>
+          </tr>
+          <tr>
+            <th>$1000</th>
+            <th>$1020</th>
+          </tr>
+        </table>
+      </div>
+      <a href="">
+        <div class="logo-container">
+          <h1><span>...</span>LA VOZ<span>...</span></h1>
+        </div>
+      </a>
+      <div class="widget-container" >
+        <!-- <span>24 de MArzo de 2024</span> -->
+        <span>{{ fechaFormateada }}</span>
+        <div class="temp-container">
+          <div>
+            <i class="fa-solid fa-cloud">{{convertCelcius(clima.main?.temp)}}°C</i>
+          </div>
+          <div>
+            <i class="fa-solid fa-temperature-low">{{clima.main?.humidity}}%</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-container">
+      <i class="fa-solid fa-bars" (click)="menu()"></i>
+      <ul class="nav-links">
+        <li class="nav-items"><a [routerLink]="['/all-noticias']">NOTICIAS</a></li>
+        <li class="nav-items"><a href="">GUIA TELEFONICA</a></li>
+        <li class="nav-items"><a href="">FARMACIA 24HS</a></li>
+        <li class="nav-items"><a href="">COMERCIOS</a></li>
+      </ul>
+      <div class="buscador">
+        <i class="fa-solid fa-search" (click)="buscar()"></i>
+        <input type="text" name="" id=""  *ngIf="buscarValue" class="input-search" #buscador>
+      </div>
+    </div>
+  </nav>
+  <div class="menu-container" id="menu-container" *ngIf="mostrarMenu" [ngClass]="{'mostrar': mostrarMenu}" > 
+    <ul class="menu">
+      <div>
+        <div>
+          <li class="enlace"  (click)="submenuNoticias()">
+            <i class="fa-solid fa-caret-right "  ></i>Noticias
+          </li>
+          <ul class="submenu" id="noticias" *ngIf="noticias" [ngClass]="{'mostrar': noticias}">
+            <li>Cultura</li>
+            <li>Educacion</li>
+            <li>Salud</li>
+            <li>Seguridad</li>
+          </ul>
+        </div>
+        <div>
+          <li  class="enlace"  (click)="submenuGuia()">
+            <i class="fa-solid fa-caret-right"></i>Guia Telefonica
+          </li>
+          <ul class="submenu" id="guia" *ngIf="guia"  [ngClass]="{'mostrar': guia}"> 
+            <li>Cultura y educacion</li>
+            <li>Personas, seguridad social e impuestos</li>
+            <li>Salud</li>
+            <li>Seguridad</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div>
+          <!-- Este capaz puede ser sacado para evitar ser redundante -->
+          <li><i class="fa-solid fa-caret-right"></i>Farmacia 24 horas</li>
+        </div>
+        <div>
+          <li  class="enlace" (click)="submenuComercios()">
+            <i class="fa-solid fa-caret-right"></i>Comercios
+          </li>
+          <ul class="submenu" id="comercios" *ngIf="comercios"  [ngClass]="{'mostrar': comercios}" >
+            <li>Bar/Restaurante</li>
+            <li>Cafeteria</li>
+            <li>Centros deportivos</li>
+            <li>Correo</li>
+            <li>Ferretieria</li>
+            <li>Pago Facil/Rapipago</li>
+            <li>Vaterinaria</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </ul>
+  </div>
+</header>
+
+

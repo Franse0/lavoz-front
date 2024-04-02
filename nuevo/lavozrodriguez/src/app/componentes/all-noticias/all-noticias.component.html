@@ -1,0 +1,26 @@
+<div class="all-container">
+
+    <section class="list-noticias">
+      <div class="list-noticias-container">
+  
+  
+        <a class="card-noticia" *ngFor="let noticias of noticias">
+          <span class="fecha-card">{{noticias.fecha_publi}}</span>
+          <div class="img-card-a-container">
+            <img src="/assets/dengue.jpg" alt="" class="img-card-a link" [routerLink]="['/noticia', noticias.id]">
+          </div>
+          <a class="enlace" [routerLink]="['/noticia', noticias.id]"><h2> {{noticias.titulo}}</h2></a>
+          <a href="#">
+            <i class="fa-solid fa-pen-to-square" (click)="editar(noticias.id, $event)"></i>
+            <i class="fa-solid fa-trash link" (click)="borar(noticias.id, $event)"></i>
+            <p class="description noticia">
+                {{noticias.resumen}}
+              </p>
+          </a>
+        </a>
+      
+  
+  
+      </div>
+     </section>
+  </div>

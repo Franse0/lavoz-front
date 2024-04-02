@@ -1,0 +1,135 @@
+
+
+/* Seccion de noticias home */
+.img{
+    width: 100%;
+    display: block;
+}
+.principal-home{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 6rem;
+}
+.card-noticia{
+    position: relative;
+    width: 100%;
+
+}
+.info-noticia,.overflow{
+    position: absolute;
+    bottom: 0 ;
+    left: 0;
+    right: 0;
+    height: 52%;
+    opacity: .6;
+    background: linear-gradient(to bottom, rgb(65, 64, 64), rgb(51, 51, 51));
+}
+.info-noticia{
+    opacity: 1;
+    background: none;
+    padding: .4rem;
+    overflow: hidden;
+}
+
+.category-info{
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    padding: .3rem;
+    border-radius: 20px;
+    background-color:rgb(4, 4, 97);
+    z-index: 2;
+    color: white;
+}
+.span-card{
+    background-color: white;
+    padding: .1rem .5rem;
+    border-radius: 20px;
+    color: black;
+    margin-right:5px ;
+}
+
+.title-card{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+}
+.fecha{
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    text-align: right;
+    padding-right: .4rem;
+    background: linear-gradient(to left, rgb(77, 77, 141), rgb(131, 128, 128));
+    opacity: .9 ;
+}
+
+.parrafo-descrip-card-pequeña{
+    max-height: 59px;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+@media(min-width:600px){
+    .parrafo-descrip-card-pequeña{
+        line-height: 1.2    ;
+        max-height: 105px;
+    }
+    .info-noticia{
+        height: 40%;
+        align-items: flex-start;
+        justify-content: start;
+        display: flex;
+        flex-direction: column;
+    }
+    .overflow{
+        height: 40%;
+    }
+    .card-noticia{
+        margin-bottom: 20px;
+    }
+}
+
+@media(min-width:700px){
+ 
+    .principal-home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 17px;
+        /* padding: 0 2rem; */
+        width: 70%;
+        margin: 15px auto;
+    }
+
+    .parrafo-descrip-card-pequeña{
+        max-height: 206px;
+           font-size: 1.1875rem;
+        /* line-height: 1.875rem; */
+    }
+
+    .img-container{
+        height: 50vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .img{
+        height: 100%;
+    }
+    .card-noticia{
+        margin-bottom: 20px;
+    }
+}
+
+@media(min-width:700px){
+
+    .noticias{
+        width: 70%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns:  1fr 1fr ;
+        gap: 3px;
+    }
+}

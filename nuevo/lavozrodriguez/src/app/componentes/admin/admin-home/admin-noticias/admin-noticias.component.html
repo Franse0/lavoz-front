@@ -4,7 +4,7 @@
     <legend>Formulario de Noticias</legend>
     <div class="form-input">
         <label for="id">Id</label>
-        <input type="number" placeholder="Id" id="id" formControlName="id">
+        <input type="number" placeholder="Id" id="id" formControlName="id" [value]="forEdit?.id">
     </div>
     <div class="form-input">
         <label for="titulo">Titulo</label>
@@ -24,11 +24,17 @@
     </div>
     <div class="form-input">
         <label for="img">Imagen</label>
-        <input type="text" placeholder="Imagen" id="img" id="id" formControlName="img">
+        <input type="text"  id="img" id="id" formControlName="img">
     </div>
     <div class="form-input">
         <label for="ruta-img">Ruta imagen</label>
         <input type="text" placeholder="Ruta imagen" id="ruta-img" id="id" formControlName="url_img">
     </div>
+    <div class="form-input">
+        <label for="categoria">Categoria</label>
+        <input type="text" placeholder="Categoria" id="categoriaimg" id="id" formControlName="categoria">
+    </div>
     <button type="submit" (click)="cargarNoticia()">Cargar</button>
 </form>
+
+<app-all-noticias></app-all-noticias    >

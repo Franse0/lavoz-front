@@ -18,6 +18,14 @@ import { HttpClientModule} from "@angular/common/http";
 import { enviroment } from './enviroments/enviroments';
 import { TelefonosComponent } from './componentes/admin/admin-home/telefonos/telefonos.component';
 import { BackHomeComponent } from './componentes/admin/back-home/back-home.component';
+import { HeaderComponent } from './componentes/header/header.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { AsideComponent } from './componentes/aside/aside.component';
+import { NoticiasComponent } from './componentes/home/noticias/noticias.component';
+import { PaginaComponent } from './componentes/pagina/pagina.component';
+import { FooterComponent } from './componentes/footer/footer.component';
+import { AllNoticiasComponent } from './componentes/all-noticias/all-noticias.component';
+import { NoticiaIndComponent } from './componentes/all-noticias/noticia-ind/noticia-ind.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +34,15 @@ import { BackHomeComponent } from './componentes/admin/back-home/back-home.compo
     AdminNoticiasComponent,
     AdminLugaresComponent,
     TelefonosComponent,
-    BackHomeComponent
+    BackHomeComponent,
+    HeaderComponent,
+    HomeComponent,
+    AsideComponent,
+    NoticiasComponent,
+    PaginaComponent,
+    FooterComponent,
+    AllNoticiasComponent,
+    NoticiaIndComponent
   ],
   imports: [
     BrowserModule,

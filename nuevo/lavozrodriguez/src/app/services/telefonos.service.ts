@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Telefonos } from '../models/telefonos';
 
 @Injectable({
@@ -31,4 +31,6 @@ export class TelefonosService {
   telefonoBorrar(id:number):Observable<any>{
     return this.http.delete(this.url+"/telefono/borrar/"+id);
   }
+
+
 }

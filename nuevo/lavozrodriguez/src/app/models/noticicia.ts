@@ -6,4 +6,5 @@ export class Noticia {
     fecha_publi:String='';
     img:String='';
     url_img:String='';
+    categoria:String='';
 }

@@ -1,0 +1,162 @@
+
+
+/* nav y header */
+.logo-container{
+    display: flex;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.widget-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    text-align: center;
+    font-size: small;
+}
+.temp-container{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    font-size: medium;
+}
+
+.logo-container>h1>span{
+    position: relative;
+    bottom: 10px;
+}
+.span{
+    text-decoration: underline;
+}
+th{
+    padding: 0 .3rem;
+}
+/* Nav */
+.nav-container, .nav-links{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0 3%;
+    height: 100%;
+    align-items: center;
+
+}
+nav{
+    height: 40px;
+    background-color:rgb(4, 4, 97);
+}
+.nav-links{
+    display: none;
+}
+
+.nav-container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.fa-bars, .nav-items>a{
+    color: white;
+    cursor: pointer;
+}
+.fa-bars{
+    font-size: 1.7rem;
+}
+.fa-search{
+    background-color: white;
+    color: rgb(4, 4, 97);
+    border-radius: 50%;
+    padding: .3rem;
+    cursor: pointer;
+}
+
+.dolar{
+    display: none;
+}
+
+@media(min-width:790px){
+    .logo-container>h1>span{
+        position: relative;
+        bottom: 10px;
+        padding: 0 1rem;
+    }
+
+    
+    .dolar{
+        display:block;
+    }
+    .nav-container, .nav-links{ 
+        flex-direction: row; 
+    }
+    .nav-links{
+        display:flex;
+    }
+}
+
+.menu-container{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+    background-color: white;
+}
+
+.submenu{
+    display: none;
+}
+.submenu>li{
+    cursor: pointer;
+}
+.mostrar{
+    display: block;
+}
+
+.enlace{
+    cursor: pointer;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    min-height: 150px;
+    height: auto;
+    align-items: center;
+}
+
+
+.enlace {
+    cursor: pointer;
+}
+
+@media(min-width:790px){
+    .menu>div{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        min-height: 150px;
+        height: auto;
+        align-items: center;
+    }
+}
+
+
+.header{
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+    background-color: white;
+    top: 0;
+}
+
+.buscador{
+    display: flex;
+    flex-direction: row;
+}

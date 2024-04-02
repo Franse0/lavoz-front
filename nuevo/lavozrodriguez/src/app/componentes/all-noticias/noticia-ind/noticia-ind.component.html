@@ -1,0 +1,55 @@
+<div class="all-container">
+    <section class="noticias">
+      <div class="noticias-container">
+        <article class="noticia-complete" *ngIf="noticia">
+          <span class="categoria">{{noticia.categoria}} </span>
+          <h1 class="h1 width" >{{noticia.titulo}} </h1>
+          <p class=" width">{{noticia.resumen}} </p>
+
+          <div class="img-noticia-container">
+            <img  [src]="noticia.url_img" class="img-noticia">
+          </div>
+          <!-- <p>{{noticia.cuerpo}}</p> -->
+          <div class="cuerpo width" [innerHTML]="noticia.cuerpo"></div>
+        </article>
+
+
+        <aside class="aside">
+          <h5>No te lo pierdas</h5>
+         
+         
+          <a class="card-noticia-section" *ngFor="let noticia of noticiaAside"  (click)="capturarValor(noticia.id)">
+            <div class="img-card-container" >
+              <img [src]="noticia.url_img" alt="" >
+            </div>    
+            <div (click)="capturarValor(noticia.id)">        
+            <a class="link"  id="{{noticia.id}}"(click)="capturarValor(noticia.id)"><h4 class="link"><strong>{{noticia.titulo}}</strong></h4> </a>  
+          </div>
+        </a>
+
+        </aside>
+      </div>
+    </section>
+  
+    <section class="list-noticias">
+
+      <div class="list-noticias-container">
+  
+        <a class="card-noticia-a" *ngFor="let noticia of noticiasMas" (click)="capturarValor(noticia.id)">
+          <span class="fecha-card-a">{{noticia.fecha_publi}} </span>
+          <div class="img-card-a-container">
+            <img [src]="noticia.url_img" alt="" class="img-card-a link" (click)="capturarValor(noticia.id)" id="{{noticia.id}}" >
+          </div>
+          <span class="enlace" (click)="capturarValor(noticia.id)" id="{{noticia.id}}" >{{noticia.titulo}} </span>
+          <p class="description-noticia-card-a" (click)="capturarValor(noticia.id)">
+            {{noticia.resumen}}
+          </p>
+        </a>
+      
+        
+   
+  
+  
+      </div>
+     </section> 
+  </div>  

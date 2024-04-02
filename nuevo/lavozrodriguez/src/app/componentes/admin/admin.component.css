@@ -55,3 +55,7 @@ input, label{
     align-items: center;
     justify-content: center;
 }
+
+.admin{
+    padding-top: 6rem;
+}
