@@ -26,8 +26,13 @@ import { PaginaComponent } from './componentes/pagina/pagina.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AllNoticiasComponent } from './componentes/all-noticias/all-noticias.component';
 import { NoticiaIndComponent } from './componentes/all-noticias/noticia-ind/noticia-ind.component';
-import { GuitaTelefonicaComponent } from './componentes/guita-telefonica/guita-telefonica.component';
-import { CardGuiaComponent } from './componentes/guita-telefonica/card-guia/card-guia.component';
+import { GuitaTelefonicaComponent } from './componentes/guia-telefonica/guia-telefonica.component';
+import { CardGuiaComponent } from './componentes/guia-telefonica/card-guia/card-guia.component';
+import { FarmaciamodalComponent } from './componentes/farmaciamodal/farmaciamodal.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +51,8 @@ import { CardGuiaComponent } from './componentes/guita-telefonica/card-guia/card
     AllNoticiasComponent,
     NoticiaIndComponent,
     GuitaTelefonicaComponent,
-    CardGuiaComponent
+    CardGuiaComponent,
+    FarmaciamodalComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,8 @@ import { CardGuiaComponent } from './componentes/guita-telefonica/card-guia/card
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    BrowserAnimationsModule,
+    MatDialogModule,
     AngularFireModule.initializeApp(enviroment.firebaseConfig)
   ],
   providers: [],

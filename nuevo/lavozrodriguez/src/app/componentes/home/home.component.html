@@ -1,7 +1,8 @@
 <section class="principal-home ">
-    <a class="card-noticia enlace" *ngFor="let noticia of noticias">
+  <div class="celu">
+    <a class="card-noticia enlace" *ngFor="let noticia of noticias"  [routerLink]="['/noticia', noticia.id]">
       <div class="img-container">
-      <img [src]="noticia.url_img" alt=""  class="img"/> 
+      <img [src]="noticia.url_img" alt=""  class="img" style="height: 100vh;"/> 
       </div>
       <div class="category-info">
         <p><span class="span-card">Noticia</span>{{noticia.categoria}}</p>  
@@ -12,11 +13,34 @@
 
       <div class="overflow"></div>
       <div class="info-noticia">
-        <h2 class="title-card">{{noticia.titulo}}</h2>
+        <h2 class="title-card enlace"   [routerLink]="['/noticia', noticia.id]">{{noticia.titulo}}</h2>
        <p  class="parrafo-descrip-card-pequeña">
         {{noticia.resumen}}
        </p> 
       </div>
     </a>
+  </div>
+  
+  <div class="compu">
+    <div class="div"*ngFor="let noticia of noticias_mas">
+      <a class="card-noticia enlace"  [routerLink]="['/noticia', noticia.id]">
+        <div class="img-contenedor">
+        <img [src]="noticia.url_img" alt=""  class="imagen" /> 
+        </div>
+        <!-- <div class="category-info">
+          <p><span class="span-card">Noticia</span>{{noticia.categoria}} </p>  
+        </div> -->
+        <div class="fecha">
+          <p>{{noticia.fecha_publi}}{{noticia.id}} </p>
+        </div>
+  
+        <div class="overflow"></div>
+        <div class="info-noticia  np">
+          <h2 class="title-card-2">{{noticia.titulo}}</h2>
+        </div>
+      </a>
+    </div>  
+  </div>
+
   
   </section>

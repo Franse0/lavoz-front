@@ -1,0 +1,51 @@
+<div class="div">
+    <section class="guia-telefonica" >
+        <ul>
+            <li class="guia-options" (click)="guiaCultura()">
+                <i class="fa-solid fa-sort-down"></i>CULTURA Y EDUCACIÓN
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="cultura" [ngClass]="{'mostrar': cultura}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-guia [numeros]="culturaList"></app-card-guia>
+                </ul>
+            <li class="guia-options" (click)="guiaPersonas()">
+                <i class="fa-solid fa-sort-down"></i>PERSONAS, SEGURIDAD SOCIAL E IMPUESTOS
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="personas" [ngClass]="{'mostrar': personas}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-guia [numeros]="personasList"></app-card-guia>
+                </ul>
+            <li class="guia-options" (click)="guiaSalud()">
+                <i class="fa-solid fa-sort-down"></i>SALUD
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="salud" [ngClass]="{'mostrar': salud}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-guia [numeros]="saludList"></app-card-guia>
+                </ul>
+            <li class="guia-options" (click)="guiaSeguridad()">
+                <i class="fa-solid fa-sort-down"></i>SEGURIDAD
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="seguridad" [ngClass]="{'mostrar': seguridad}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-guia [numeros]="seguridadList"></app-card-guia>
+                </ul>
+        </ul>
+    </section>
+    
+    <section class="sumarte">
+        <div class="card-sumarte">
+            <div class="container">
+                <h4><strong>¿TENÉS ALGUN TELEFONO UTIL?</strong></h4>
+                <span>¡ENVIANOS UN MENSAJE!</span>
+                <div class="icons">
+                    <a href="">
+                        <img src="/assets/correo-electronico-vacio.png" alt="" class="img-aside enlace">
+                    </a>
+                    <a href="">
+                        <img src="/assets/whatsapp.png" alt="" class="img-aside enlace">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

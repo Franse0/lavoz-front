@@ -24,6 +24,7 @@
     max-height: 150px;
     overflow: hidden;
     line-height: 1.4;
+    font-weight: bold;
 }
 
 .list-noticias-container{
@@ -37,11 +38,10 @@
 
 .fecha-card-a{
     position: relative;
-    top: 40px;
-    left: 20px;
+    top: 2px;
+    right:  0px;
     border-radius: 10px;
-    background-color: var(--color5);
-    text-align: center;
+    /* text-align: center; */
     opacity: .7;
 }
 
@@ -195,5 +195,9 @@ h2{
     padding: 1rem 0rem;
 }
 .categoria{
-    background-color: red;
+    background-color: var(--primary);
+    color: white;
+    padding: .2rem  2rem ;
+    border-radius: 15px;
+    text-align: center;
 }

@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ClimaService } from 'src/app/services/clima.service';
 import { NoticiaService } from 'src/app/services/noticia.service';
+import { MatDialog } from '@angular/material/dialog';
+import { FarmaciamodalComponent } from '../farmaciamodal/farmaciamodal.component';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,9 @@ export class HeaderComponent implements OnInit{
   fechaActual: Date | undefined;
   fechaFormateada: string | undefined;
 
-  constructor(private climaService:ClimaService, private noticiaService:NoticiaService){}
+  constructor(private climaService:ClimaService,
+               private noticiaService:NoticiaService,
+               public dialog: MatDialog){}
   ngOnInit(): void {
     this.fechaActual = new Date();
     this.fechaFormateada = this.formatoFecha(this.fechaActual);
@@ -69,5 +73,14 @@ export class HeaderComponent implements OnInit{
       this.buscarValue = !this.buscarValue;
       console.log(this.buscarValue);
     }
+  }
+
+  openModal(event:Event): void {
+    event.preventDefault()
+    const dialogRef = this.dialog.open(FarmaciamodalComponent, {
+      width: '80%', // Ancho del modal
+      height: '80%', // Altura del modal
+      panelClass: 'custom-dialog-container' // Clase CSS personalizada para el modal
+    });
   }
 }

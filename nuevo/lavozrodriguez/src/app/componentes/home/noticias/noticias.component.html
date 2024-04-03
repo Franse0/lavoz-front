@@ -1,142 +1,22 @@
 <section class="noticias">
-    <a class="card-noticia enlace">
-      <div class="img-container">
-        <img src="/assets/dengue.jpg" alt=""  class="img"/> 
-      </div>
-      <div class="category-info">
-        <p><span class="span-card">Noticia</span>Noticia</p>  
-      </div>
-      <div class="fecha">
-        <p>15 de marzo de 2024</p>
-      </div>
+  <a class="card-noticia enlace" *ngFor="let noticia of noticias"  [routerLink]="['/noticia', noticia.id]">
+    <div class="img-container">
+    <img [src]="noticia.url_img" alt=""  class="img" style="height: 100vh;"/> 
+    </div>
+    <div class="category-info">
+      <p><span class="span-card">Noticia</span>{{noticia.categoria}}</p>  
+    </div>
+    <div class="fecha">
+      <p>{{noticia.fecha_publi}}</p>
+    </div>
 
-      <div class="overflow"></div>
-      <div class="info-noticia">
-        <h2 class="title-card">Dengue: Aumentaron los casos en el hospital</h2>
-       <p  class="parrafo-descrip-card-pequeña">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-       </p> 
-      </div>
-    </a>
-    <a class="card-noticia enlace">
-      <div class="img-container">
-        <img src="/assets/dengue.jpg" alt=""  class="img"/> 
-      </div>
-      <div class="category-info">
-        <p><span class="span-card">Noticia</span>Noticia</p>
-      </div>
-      <div class="fecha">
-        <p>15 de marzo de 2024</p>
-      </div>
+    <div class="overflow"></div>
+    <div class="info-noticia">
+      <h2 class="title-card enlace"   [routerLink]="['/noticia', noticia.id]">{{noticia.titulo}}</h2>
+     <p  class="parrafo-descrip-card-pequeña">
+      {{noticia.resumen}}
+     </p> 
+    </div>
+  </a>
 
-      <div class="overflow"></div>
-      <div class="info-noticia">
-        <h2 class="title-card">Dengue: Aumentaron los casos en el hospital</h2>
-       <p  class="parrafo-descrip-card-pequeña">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-       </p> 
-      </div>
-    </a>
-    <a class="card-noticia enlace">
-      <div class="img-container">
-        <img src="/assets/dengue.jpg" alt=""  class="img"/> 
-      </div>
-      <div class="category-info">
-        <p><span class="span-card">Noticia</span>Noticia</p>  
-      </div>
-      <div class="fecha">
-        <p>15 de marzo de 2024</p>
-      </div>
-
-      <div class="overflow"></div>
-      <div class="info-noticia">
-        <h2 class="title-card">Dengue: Aumentaron los casos en el hospital</h2>
-       <p  class="parrafo-descrip-card-pequeña">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-       </p> 
-      </div>
-    </a>
-    <a class="card-noticia enlace">
-      <div class="img-container">
-        <img src="/assets/dengue.jpg" alt=""  class="img"/> 
-      </div>
-      <div class="category-info">
-        <p><span class="span-card">Noticia</span>Noticia</p>
-      </div>
-      <div class="fecha">
-        <p>15 de marzo de 2024</p>
-      </div>
-
-      <div class="overflow"></div>
-      <div class="info-noticia">
-        <h2 class="title-card">Dengue: Aumentaron los casos en el hospital</h2>
-       <p  class="parrafo-descrip-card-pequeña">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-        dolor pariatur dolore porro fugit voluptatem iste aliquid libero aut
-        error.
-       </p> 
-      </div>
-    </a>
   </section>

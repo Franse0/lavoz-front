@@ -18,6 +18,8 @@ export class TelefonosComponent {
       telefono_prin:["", [Validators.required]],  
       telefonos: ["", [Validators.required]],
       ubicacion_map: ["", [Validators.required]],
+      ubicacion: ["", [Validators.required]],
+      categoria: ["", [Validators.required]],
     })
   }
 
@@ -33,10 +35,18 @@ export class TelefonosComponent {
       telefono_prin:this.formAdmin.value.telefono_prin,
       telefonos:this.formAdmin.value.telefonos,
       ubicacion_map:this.formAdmin.value.ubicacion_map,
+      ubicacion:this.formAdmin.value.ubicacion,
+      categoria:this.formAdmin.value.categoria,
     }
-    this.telefonosService.telefonoAgregar(telefono).subscribe()
-    this.formAdmin.reset()
-
-    alert("Telefono cargado con exito");
+    this.telefonosService.telefonoAgregar(telefono).subscribe({
+      next: (response) => {
+        // this.formAdmin.reset();
+        alert("Teléfono cargado con éxito");
+      },
+      error: (err) => {
+        console.error(err);
+        alert("Hubo un error al cargar el teléfono. Por favor, intenta nuevamente.");
+      }
+    });
   }
 }

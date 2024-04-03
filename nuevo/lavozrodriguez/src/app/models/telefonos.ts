@@ -4,4 +4,6 @@ export class Telefonos {
     telefono_prin:String='';
     telefonos:String='';
     ubicacion_map:String='';
+    ubicacion:String='';
+    categoria:String='';
 }

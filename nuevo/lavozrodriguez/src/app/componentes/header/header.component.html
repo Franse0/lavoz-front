@@ -37,8 +37,9 @@
     <div class="nav-container">
       <i class="fa-solid fa-bars" (click)="menu()"></i>
       <ul class="nav-links">
+        <!-- <a class="btn_nav open-popup-iframe" href="https://www.lapostanoticias.com.ar/farmacias-de-turno.php"></a> -->
         <li class="nav-items"><a href="">COMERCIOS</a></li>
-        <li class="nav-items"><a href="">FARMACIA 24HS</a></li>
+        <li class="nav-items" (click)="openModal($event)"><a href="">FARMACIA 24HS</a></li>
         <li class="nav-items"><a [routerLink]="['/guia-telefonica']">GUIA TELEFONICA</a></li>
         <li class="nav-items"><a [routerLink]="['/all-noticias']">NOTICIAS</a></li>
       </ul>

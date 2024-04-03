@@ -8,13 +8,15 @@ import { NoticiaService } from 'src/app/services/noticia.service';
 })
 export class HomeComponent implements OnInit {
 noticias:any;
+noticias_mas:any;
 
   constructor(private noticiasService:NoticiaService){}
 
   ngOnInit(): void {
     this.noticiasService.noticiasTodos().subscribe(data=>{
       this.noticias=data.slice(-1)
-      console.log("noticias", this.noticias)
+      this.noticias_mas=data.slice(0, 3)
+      console.log("noticias", this.noticias_mas)
       // this.noticias.forEach((noticia:any) => {
         // this.obtenerImagenDeNoticia(noticia.id)
       // });

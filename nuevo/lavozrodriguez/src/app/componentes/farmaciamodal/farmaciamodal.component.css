@@ -1,0 +1,32 @@
+/* Estilos del modal */
+.modal-content {
+    background-color: #fefefe;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+/* Estilos para el botón de cierre */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+iframe {
+    width: 100%; /* Ancho completo */
+    height: 90%; /* Altura completa */
+}

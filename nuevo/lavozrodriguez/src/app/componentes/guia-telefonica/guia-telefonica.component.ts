@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { TelefonosService } from 'src/app/services/telefonos.service';
 
 @Component({
-  selector: 'app-guita-telefonica',
-  templateUrl: './guita-telefonica.component.html',
-  styleUrls: ['./guita-telefonica.component.css']
+  selector: 'app-guia-telefonica',
+  templateUrl: './guia-telefonica.component.html',
+  styleUrls: ['./guia-telefonica.component.css']
 })
 export class GuitaTelefonicaComponent  implements OnInit{
 
-    cultura:boolean=true
+    cultura:boolean=false
     salud:boolean=false
     seguridad:boolean=false
     personas:boolean=false
@@ -27,7 +27,7 @@ export class GuitaTelefonicaComponent  implements OnInit{
             case 'cultura':
               this.culturaList.push(numero);
               break;
-            case 'persona':
+            case 'personas':
               this.personasList.push(numero);
               break;
             case 'salud':

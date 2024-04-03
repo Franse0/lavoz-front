@@ -1,0 +1,80 @@
+.guia-telefonica{
+    padding-top: 6rem;
+}
+.guia-options{
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: .3rem 0;
+    cursor: pointer;
+    transition: .3s;
+}
+.guia-options:hover{
+    text-decoration: underline .4px;
+}
+.fa-sort-down{
+    font-size: 2rem;
+    position: relative;
+    transform: translateY(-5px);
+}
+.mostrar{
+    display: block;
+}
+/* .submenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 15px;
+    background-color: rgb(215, 229, 243);
+} */
+
+.img-aside{
+    width: 40px;
+    margin: 0 5px;
+}
+.card-sumarte{
+    background-color:rgb(4, 4, 97);
+    padding: .6rem 1rem;
+    text-align: center;
+    width: 85%;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.icons{
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+    padding:  0;
+    background-color: white;
+}
+.container{
+    background-color: white;
+    /* padding: 0 1rem; */
+    border-radius:10px;
+    /* padding-top: 1.2rem; */
+}
+.div{
+    background-color: rgb(215, 229, 243);
+    min-height: 90vh;
+}
+
+@media(min-width:790px){
+    .submenu{
+        flex-direction: column;
+        background-color: white;
+    }
+    .div{
+        background-color: white;
+        min-height: 90vh;
+    }
+ 
+}
+

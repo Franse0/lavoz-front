@@ -22,7 +22,7 @@
     justify-content: center;
     text-align: start;  
 }
-.form-input>input, .form-input>textarea{
+.form-input>input, .form-input>textarea,  .form-input>select{
     padding: .2rem 1rem;
     width: 90%;
     border-radius: 5px;

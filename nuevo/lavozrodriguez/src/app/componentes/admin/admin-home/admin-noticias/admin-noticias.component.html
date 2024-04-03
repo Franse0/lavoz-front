@@ -24,7 +24,7 @@
     </div>
     <div class="form-input">
         <label for="img">Imagen</label>
-        <input type="text"  id="img" id="id" formControlName="img">
+        <input type="file"  id="img" id="id" formControlName="img">
     </div>
     <div class="form-input">
         <label for="ruta-img">Ruta imagen</label>
@@ -32,7 +32,12 @@
     </div>
     <div class="form-input">
         <label for="categoria">Categoria</label>
-        <input type="text" placeholder="Categoria" id="categoriaimg" id="id" formControlName="categoria">
+        <select type="" placeholder="Catgoria" id="categoria"  formControlName="categoria">
+            <option value="personas">Educacion</option>
+            <option value="salud">Salud</option>
+            <option value="seguridad">Seguridad</option>
+            <option value="cultura">Cultura</option>    
+        </select>
     </div>
     <button type="submit" (click)="cargarNoticia()">Cargar</button>
 </form>
