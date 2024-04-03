@@ -9,6 +9,7 @@ import { TelefonosComponent } from './componentes/admin/admin-home/telefonos/tel
 import { PaginaComponent } from './componentes/pagina/pagina.component';
 import { AllNoticiasComponent } from './componentes/all-noticias/all-noticias.component';
 import { NoticiaIndComponent } from './componentes/all-noticias/noticia-ind/noticia-ind.component';
+import { GuitaTelefonicaComponent } from './componentes/guita-telefonica/guita-telefonica.component';
 
 const routes: Routes = [
   {path:"admin", component:AdminComponent},
@@ -20,6 +21,9 @@ const routes: Routes = [
 
   {path:"all-noticias", component:AllNoticiasComponent},
   {path:"noticia/:id", component:NoticiaIndComponent},
+
+  {path:"guia-telefonica", component:GuitaTelefonicaComponent},
+
 
 
 

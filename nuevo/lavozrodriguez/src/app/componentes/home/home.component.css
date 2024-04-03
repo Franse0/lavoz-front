@@ -14,7 +14,7 @@
 .card-noticia{
     position: relative;
     width: 100%;
-
+    color: white;
 }
 .info-noticia,.overflow{
     position: absolute;
@@ -63,6 +63,7 @@
     padding-right: .4rem;
     background: linear-gradient(to left, rgb(77, 77, 141), rgb(131, 128, 128));
     opacity: .9 ;
+    padding: .2rem;
 }
 
 .parrafo-descrip-card-pequeña{
@@ -79,7 +80,7 @@
     .info-noticia{
         height: 40%;
         align-items: flex-start;
-        justify-content: start;
+        justify-content: flex-start;
         display: flex;
         flex-direction: column;
     }

@@ -26,6 +26,8 @@ import { PaginaComponent } from './componentes/pagina/pagina.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { AllNoticiasComponent } from './componentes/all-noticias/all-noticias.component';
 import { NoticiaIndComponent } from './componentes/all-noticias/noticia-ind/noticia-ind.component';
+import { GuitaTelefonicaComponent } from './componentes/guita-telefonica/guita-telefonica.component';
+import { CardGuiaComponent } from './componentes/guita-telefonica/card-guia/card-guia.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { NoticiaIndComponent } from './componentes/all-noticias/noticia-ind/noti
     PaginaComponent,
     FooterComponent,
     AllNoticiasComponent,
-    NoticiaIndComponent
+    NoticiaIndComponent,
+    GuitaTelefonicaComponent,
+    CardGuiaComponent
   ],
   imports: [
     BrowserModule,

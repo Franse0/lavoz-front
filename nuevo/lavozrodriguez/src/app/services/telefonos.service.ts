@@ -16,7 +16,7 @@ export class TelefonosService {
 
   constructor(private http:HttpClient) { }
 
-  relefonosTodos():Observable<any>{
+  telefonosTodos():Observable<any>{
     return this.http.get(this.url+"/telefonos");
   }
 

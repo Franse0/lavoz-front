@@ -11,8 +11,8 @@
           </div>
           <a class="enlace" [routerLink]="['/noticia', noticias.id]"><h2> {{noticias.titulo}}</h2></a>
           <a href="#">
-            <i class="fa-solid fa-pen-to-square" (click)="editar(noticias.id, $event)"></i>
-            <i class="fa-solid fa-trash link" (click)="borar(noticias.id, $event)"></i>
+            <i class="fa-solid fa-pen-to-square" (click)="editar(noticias.id, $event)" *ngIf="mostrarId"></i>
+            <i class="fa-solid fa-trash link" (click)="borar(noticias.id, $event)" *ngIf="mostrarId"></i>
             <p class="description noticia">
                 {{noticias.resumen}}
               </p>

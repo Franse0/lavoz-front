@@ -13,7 +13,7 @@ noticias:any;
 
   ngOnInit(): void {
     this.noticiasService.noticiasTodos().subscribe(data=>{
-      this.noticias=data.reverse()
+      this.noticias=data.slice(-1)
       console.log("noticias", this.noticias)
       // this.noticias.forEach((noticia:any) => {
         // this.obtenerImagenDeNoticia(noticia.id)
