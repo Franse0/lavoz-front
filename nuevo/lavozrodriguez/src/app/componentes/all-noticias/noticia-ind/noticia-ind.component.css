@@ -29,11 +29,13 @@
 
 .list-noticias-container{
     display: flex;
-    justify-content: center;
-    gap: 5%;
+    justify-content: space-around;
+    gap: 25px;
+
     display: grid;
     grid-template-columns: 1fr 1fr ;
-    padding: 0 1rem;
+    padding:  1rem;
+    padding-bottom: 2rem;
 }
 
 .fecha-card-a{
@@ -176,12 +178,16 @@ h2{
 @media(min-width:700px){
     .list-noticias-container{
         grid-template-columns: 1fr 1fr 1fr ;
+        justify-content: space-between;
+        padding: 0;
+        padding-bottom: 2rem;
     }
     .noticias{
         width: 70%;
     }
     .list-noticias{
         width: 70%;
+        padding: 0;
         margin: 0 auto;
     }
     .width{

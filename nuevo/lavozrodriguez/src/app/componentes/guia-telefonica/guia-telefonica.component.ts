@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
 import { TelefonosService } from 'src/app/services/telefonos.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { TelefonosService } from 'src/app/services/telefonos.service';
   styleUrls: ['./guia-telefonica.component.css']
 })
 export class GuitaTelefonicaComponent  implements OnInit{
+
+    parametroDeRuta: any="";
 
     cultura:boolean=false
     salud:boolean=false
@@ -18,9 +21,27 @@ export class GuitaTelefonicaComponent  implements OnInit{
     seguridadList: any[] = [];
     personasList: any[] = [];
 
-    constructor(private telefonoService:TelefonosService){}
+    constructor(private telefonoService:TelefonosService, private route:ActivatedRoute){}
 
     ngOnInit(): void {
+      this.route.queryParams.subscribe(params => {
+        this.parametroDeRuta = params['categoria'];
+        console.log("soy el parametro",this.parametroDeRuta)
+        switch(this.parametroDeRuta){
+          case "cultura":
+            this.cultura=true
+            break;
+          case "seguridad":
+            this.seguridad=true;
+            break;
+          case "personas":
+            this.personas=true;
+            break;
+          case "salud":
+            this.salud=true;   
+            break;  
+        }
+      });
       this.telefonoService.telefonosTodos().subscribe(data => {    
         data.forEach((numero: any) => {
           switch(numero.categoria) {
@@ -38,7 +59,9 @@ export class GuitaTelefonicaComponent  implements OnInit{
               break;
           }
         });
-      });
+      }
+      
+      );
     }
     guiaCultura(){
       this.cultura=!this.cultura

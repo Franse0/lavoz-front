@@ -50,4 +50,5 @@ export class NoticiaService {
   changeNoticiaId(id: number) {
     this.noticiaIdSource.next(id);
   }
+  
 }

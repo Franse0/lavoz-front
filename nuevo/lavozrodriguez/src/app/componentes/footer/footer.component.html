@@ -1,1 +1,43 @@
-<p>footer works!</p>
+<div class="pre-pie-pagina">
+
+  <div class="links-navegacion">
+    <div class="">
+      <div class="logo-container">
+        <span class="logo"><Strong>LA VOZ</Strong></span>
+      </div>
+    </div>
+    <div class="navegacion">
+      <ul>
+        <li><a (click)="seleccionarCategoria('cultura')">Cultura</a></li>
+        <li><a (click)="seleccionarCategoria('educacion')">Educación</a></li>
+        <li><a (click)="seleccionarCategoria('salud')">Salud</a></li>
+        <li><a (click)="seleccionarCategoria('seguridad')">Seguridad</a></li>
+      </ul>
+  
+    </div>
+  </div>
+  <div class="sumar">
+    <ul class="sumar-li">
+      <li ><a href="">Sumar un local</a></li>
+      <li><a href="">Sumar un numero importante</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer id="contacto">
+    <div class="links">
+     
+      <a  target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <!-- <i class="fa-brands fa-youtube"></i> -->
+      <i class="fa-regular fa-envelope" (click)="mail()">
+  
+      </i>
+      
+      <a target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+    </div>  
+    <span>La Voz General Rodriguez | Todos los derechos reservados © 2023</span>
+</footer>

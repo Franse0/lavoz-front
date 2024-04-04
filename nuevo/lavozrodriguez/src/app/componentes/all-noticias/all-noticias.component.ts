@@ -3,6 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Noticia } from 'src/app/models/noticicia';
+import { EstadoCategoriaService } from 'src/app/services/estado-categoria.service';
 import { NoticiaService } from 'src/app/services/noticia.service';
 
 @Component({
@@ -14,35 +15,72 @@ export class AllNoticiasComponent {
   noticias!: any[]; 
   mostrarId:boolean=false;
   private suscripcion: Subscription | undefined;
+  categoriaSeleccionada: string="";
 
 
-  constructor(private noticiaService:NoticiaService,private viewportScroller: ViewportScroller, private router:Router){}
+  constructor(private noticiaService:NoticiaService,
+    private viewportScroller: ViewportScroller, 
+    private router:Router,
+    private estadoCategoriasService: EstadoCategoriaService){}
 
-  ngOnInit(): void {
-    this.viewportScroller.scrollToPosition([0, 0]);
-  
-    // Suscribirse a las notificaciones de actualización de noticias
-    this.suscripcion = this.noticiaService.actualizacionNoticias$.subscribe((actualizacion) => {
-      if (actualizacion) {
-        // Recargar las noticias cuando se emite una actualización
-        this.cargarNoticias();
-      }
-    });
-  
-    // Verificar si estás en la ruta '/admin-noticias'
-    if (this.router.url.includes("/admin-noticias")) {
-      this.mostrarId = true;
+    ngOnInit(): void {
+      this.viewportScroller.scrollToPosition([0, 0]); 
+      this.suscripcion = this.noticiaService.actualizacionNoticias$.subscribe((actualizacion) => {
+        if (actualizacion) {
+          // Recargar las noticias cuando se emite una actualización
+          this.obtenerTodasLasNoticias();
+        }
+      }); 
+      // Obtener la categoría seleccionada del servicio de estado de categorías
+      this.estadoCategoriasService.categoriaSeleccionada$.subscribe(categoria => {
+        this.categoriaSeleccionada = categoria;
+        console.log("soy la categoira", this.categoriaSeleccionada)
+        // Si hay una categoría seleccionada, filtrar las noticias por esa categoría
+        if (categoria) {
+          this.filtrarPorCategoria(categoria);
+        } else {
+          // De lo contrario, cargar todas las noticias
+          this.obtenerTodasLasNoticias();
+        }
+      });
     }
   
-    // Cargar las noticias una vez, después de suscribirse y verificar la ruta
-    this.cargarNoticias();
-  }
+
+  filtrarPorCategoria(categoria: string) {
+    if(categoria==="todas"){
+      console.log("la categoria es todas")
+      this.noticiaService.noticiasTodos().subscribe(data=>{
+        this.noticias=data
+      })
+    } else{
+      this.noticiaService.noticiasTodos().subscribe(
+        (data: any[]) => {
+          this.noticias = data.filter(noticia => noticia.categoria === categoria);
+        },
+        error => {
+          console.error('Error al obtener las noticias:', error);
+        }
+      );
   
-  cargarNoticias(){
-    this.noticiaService.noticiasTodos().subscribe(data=>{
-      this.noticias=data
-    })
+    }
   }
+  obtenerTodasLasNoticias() {
+    this.noticiaService.noticiasTodos().subscribe(
+      (data: any[]) => {
+        this.noticias = data;
+      },
+      error => {
+        console.error('Error al obtener las noticias:', error);
+      }
+    );
+  }
+  editar(id: number,  event:Event) {
+    event.preventDefault()
+    console.log(id)
+    this.noticiaService.changeNoticiaId(id);
+  }
+
+   
   borar(id:number, event:Event){
     event.preventDefault()
     if(window.confirm(`Seguro deseas eliminar el item con el id:${id}`)){
@@ -52,12 +90,5 @@ export class AllNoticiasComponent {
         console.log(data)
       }))
 }} 
-
-  
-  editar(id: number,  event:Event) {
-    event.preventDefault()
-    console.log(id)
-    this.noticiaService.changeNoticiaId(id);
-  }
 
 }

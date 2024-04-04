@@ -32,6 +32,8 @@ import { FarmaciamodalComponent } from './componentes/farmaciamodal/farmaciamoda
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LugaresComponent } from './componentes/lugares/lugares.component';
+import { CardLugarComponent } from './componentes/lugares/card-lugar/card-lugar.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     NoticiaIndComponent,
     GuitaTelefonicaComponent,
     CardGuiaComponent,
-    FarmaciamodalComponent
+    FarmaciamodalComponent,
+    LugaresComponent,
+    CardLugarComponent
   ],
   imports: [
     BrowserModule,

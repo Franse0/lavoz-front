@@ -19,15 +19,19 @@
           <h1><span>...</span>LA VOZ<span>...</span></h1>
         </div>
       </a>
-      <div class="widget-container" >
+      <div class="widget-container">
         <!-- <span>24 de MArzo de 2024</span> -->
         <span>{{ fechaFormateada }}</span>
         <div class="temp-container">
           <div>
-            <i class="fa-solid fa-cloud">{{convertCelcius(clima.main?.temp)}}°C</i>
+            <i class="fa-solid fa-cloud"
+              >{{ convertCelcius(clima.main?.temp) }}°C</i
+            >
           </div>
           <div>
-            <i class="fa-solid fa-temperature-low">{{clima.main?.humidity}}%</i>
+            <i class="fa-solid fa-temperature-low"
+              >{{ clima.main?.humidity }}%</i
+            >
           </div>
         </div>
       </div>
@@ -38,40 +42,120 @@
       <i class="fa-solid fa-bars" (click)="menu()"></i>
       <ul class="nav-links">
         <!-- <a class="btn_nav open-popup-iframe" href="https://www.lapostanoticias.com.ar/farmacias-de-turno.php"></a> -->
-        <li class="nav-items"><a href="">COMERCIOS</a></li>
-        <li class="nav-items" (click)="openModal($event)"><a href="">FARMACIA 24HS</a></li>
-        <li class="nav-items"><a [routerLink]="['/guia-telefonica']">GUIA TELEFONICA</a></li>
-        <li class="nav-items"><a [routerLink]="['/all-noticias']">NOTICIAS</a></li>
+        <li class="nav-items">
+          <a [routerLink]="['/guia-comercios']" (click)="closeMenu()"
+            >COMERCIOS</a
+          >
+        </li>
+        <li class="nav-items" (click)="openModal($event)">
+          <a href="">FARMACIA 24HS</a>
+        </li>
+        <li class="nav-items">
+          <a [routerLink]="['/guia-telefonica']" (click)="closeMenu()"
+            >GUIA TELEFONICA</a
+          >
+        </li>
+        <li class="nav-items">
+          <a [routerLink]="['/all-noticias']" (click)="formatearCategoria()"
+            >NOTICIAS</a
+          >
+        </li>
       </ul>
       <div class="buscador">
         <i class="fa-solid fa-search" (click)="buscar()"></i>
-        <input type="text" name="" id=""  *ngIf="buscarValue" class="input-search" #buscador>
+        <input
+          type="text"
+          name=""
+          id=""
+          *ngIf="buscarValue"
+          class="input-search"
+          #buscador
+        />
       </div>
     </div>
   </nav>
-  <div class="menu-container" id="menu-container" *ngIf="mostrarMenu" [ngClass]="{'mostrar': mostrarMenu}" > 
+  <div
+    class="menu-container"
+    id="menu-container"
+    *ngIf="mostrarMenu"
+    [ngClass]="{ mostrar: mostrarMenu }"
+  >
     <ul class="menu">
       <div>
         <div>
-          <li class="enlace"  (click)="submenuNoticias()">
-            <i class="fa-solid fa-caret-right "  ></i>Noticias
+          <li class="enlace" (click)="submenuNoticias()">
+            <i class="fa-solid fa-caret-right"></i>Noticias
           </li>
-          <ul class="submenu" id="noticias" *ngIf="noticias" [ngClass]="{'mostrar': noticias}">
-            <li>Cultura</li>
-            <li>Educacion</li>
-            <li>Salud</li>
-            <li>Seguridad</li>
+          <ul
+            class="submenu"
+            id="noticias"
+            *ngIf="noticias"
+            [ngClass]="{ mostrar: noticias }"
+          >
+            <li (click)="seleccionarCategoria('cultura')" class="enlace">
+              Cultura
+            </li>
+            <li (click)="seleccionarCategoria('educacion')" class="enlace">
+              Educacion
+            </li>
+            <li (click)="seleccionarCategoria('Salud')" class="enlace">
+              Salud
+            </li>
+            <li (click)="seleccionarCategoria('seguridad')" class="enlace">
+              Seguridad
+            </li>
+            <li (click)="formatearCategoria()" class="enlace">Todas</li>
           </ul>
         </div>
         <div>
-          <li  class="enlace"  (click)="submenuGuia()">
+          <li class="enlace" (click)="submenuGuia()">
             <i class="fa-solid fa-caret-right"></i>Guia Telefonica
           </li>
-          <ul class="submenu" id="guia" *ngIf="guia"  [ngClass]="{'mostrar': guia}"> 
-            <li>Cultura y educacion</li>
-            <li>Personas, seguridad social e impuestos</li>
-            <li>Salud</li>
-            <li>Seguridad</li>
+          <ul
+            class="submenu"
+            id="guia"
+            *ngIf="guia"
+            [ngClass]="{ mostrar: guia }"
+          >
+            <li
+              [routerLink]="['/guia-telefonica']"
+              [queryParams]="{ categoria: 'cultura' }"
+              (click)="closeMenu()"
+              class="enlace"
+            >
+              Cultura y educación
+            </li>
+            <li
+              [routerLink]="['/guia-telefonica']"
+              [queryParams]="{ categoria: 'personas' }"
+              (click)="closeMenu()"
+              class="enlace"
+            >
+              Personas, seguridad social e impuestos
+            </li>
+            <li
+              [routerLink]="['/guia-telefonica']"
+              [queryParams]="{ categoria: 'salud' }"
+              (click)="closeMenu()"
+              class="enlace"
+            >
+              Salud
+            </li>
+            <li
+              [routerLink]="['/guia-telefonica']"
+              [queryParams]="{ categoria: 'seguridad' }"
+              (click)="closeMenu()"
+              class="enlace"
+            >
+              Seguridad
+            </li>
+            <li
+              [routerLink]="['/guia-telefonica']"
+              (click)="closeMenu()"
+              class="enlace"
+            >
+              Todos
+            </li>
           </ul>
         </div>
       </div>
@@ -81,23 +165,53 @@
           <li><i class="fa-solid fa-caret-right"></i>Farmacia 24 horas</li>
         </div>
         <div>
-          <li  class="enlace" (click)="submenuComercios()">
+          <li class="enlace" (click)="submenuComercios()">
             <i class="fa-solid fa-caret-right"></i>Comercios
           </li>
-          <ul class="submenu" id="comercios" *ngIf="comercios"  [ngClass]="{'mostrar': comercios}" >
-            <li>Bar/Restaurante</li>
-            <li>Cafeteria</li>
-            <li>Centros deportivos</li>
-            <li>Correo</li>
-            <li>Ferretieria</li>
-            <li>Pago Facil/Rapipago</li>
-            <li>Vaterinaria</li>
-            <li></li>
+          <ul
+            class="submenu"
+            id="comercios"
+            *ngIf="comercios"
+            [ngClass]="{ mostrar: comercios }"
+          >
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'bar/restaurante' }"
+            (click)="closeMenu()"
+            class="enlace">Bar/Restaurante</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'cafeteria' }"
+            (click)="closeMenu()"
+            class="enlace">Cafeteria</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'centros-deportivo' }"
+            (click)="closeMenu()"
+            class="enlace">Centros deportivos</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'correo' }"
+            (click)="closeMenu()"
+            class="enlace">Correo</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'ferreteria' }"
+            (click)="closeMenu()"
+            class="enlace">Ferreteria</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'gomeria' }"
+            (click)="closeMenu()"
+            class="enlace">Gomeria</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'pago-facil' }"
+            (click)="closeMenu()"
+            class="enlace">Pago Facil/Rapipago</li>
+            <li [routerLink]="['/guia-comercios']"
+            [queryParams]="{ categoria: 'veterinaria' }"
+            (click)="closeMenu()"
+            class="enlace">Vaterinaria</li>
+            <li [routerLink]="['/guia-comercios']"
+            (click)="closeMenu()"
+            class="enlace">Todos</li>
           </ul>
         </div>
       </div>
     </ul>
   </div>
 </header>
-
-

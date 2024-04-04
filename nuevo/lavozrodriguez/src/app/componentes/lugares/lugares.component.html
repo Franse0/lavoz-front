@@ -1,0 +1,78 @@
+<div class="div">
+    <section class="guia-comercial" >
+        <ul>
+            <li class="guia-options" (click)="guiaRestarurantes()">
+                <i class="fa-solid fa-sort-down"></i>BAR/RESTAURANTES
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="restauranteBar" [ngClass]="{'mostrar': restauranteBar}">
+                    <app-card-lugar [comercios]="restaruanteList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaCafeteria()">
+                <i class="fa-solid fa-sort-down"></i>CAFETERIA
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="cafeteria" [ngClass]="{'mostrar': cafeteria}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="cafeteriaList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaCentrosDeportivos()">
+                <i class="fa-solid fa-sort-down"></i>CENTROS DEPORTIVOS
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="centroDeportivo" [ngClass]="{'mostrar': centroDeportivo}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="centroDeportivoList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaCorreo()">
+                <i class="fa-solid fa-sort-down"></i>CORREO
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="correo" [ngClass]="{'mostrar': correo}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="correoList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaFerreteria()">
+                <i class="fa-solid fa-sort-down"></i>FERRETERIAS
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="ferreteria" [ngClass]="{'mostrar': ferreteria}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="ferreteriaList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaGomeria()">
+                <i class="fa-solid fa-sort-down"></i>GOMERIAS
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="gomeria" [ngClass]="{'mostrar': gomeria}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="gomeriaList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaPagoFacil()">
+                <i class="fa-solid fa-sort-down"></i>PAGO FÁCIL/RAPIPAGO
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="pagoFacil" [ngClass]="{'mostrar': pagoFacil}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="pagoFacilList"></app-card-lugar>
+                </ul>
+            <li class="guia-options" (click)="guiaVeterinaria()">
+                <i class="fa-solid fa-sort-down"></i>VETERINARIA
+            </li>
+                <ul class="submenu" id="noticias" *ngIf="veterinaria" [ngClass]="{'mostrar': veterinaria}">
+                    <!-- <app-card-guia *ngFor="let numero of personasList"></app-card-guia> -->
+                    <app-card-lugar [comercios]="veterinariasList"></app-card-lugar>
+                </ul>
+        </ul>
+    </section>
+    
+    <section class="sumarte">
+        <div class="card-sumarte">
+            <div class="container">
+                <h4><strong>¿tu negocio no aparece?</strong></h4>
+                <span>¡ENVIANOS UN MENSAJE!</span>
+                <div class="icons">
+                    <a href="">
+                        <img src="/assets/correo-electronico-vacio.png" alt="" class="img-aside enlace">
+                    </a>
+                    <a href="">
+                        <img src="/assets/whatsapp.png" alt="" class="img-aside enlace">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

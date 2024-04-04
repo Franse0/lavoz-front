@@ -7,7 +7,7 @@
         <a class="card-noticia" *ngFor="let noticias of noticias">
           <!-- <span class="fecha-card">{{noticias.fecha_publi}}</span> -->
           <div class="img-card-a-container">
-            <img [src]="noticias.img " alt="" class="img-card-a link" [routerLink]="['/noticia', noticias.id]">
+            <img [src]="noticias.url_img " alt="" class="img-card-a link" [routerLink]="['/noticia', noticias.id]">
           </div>
           <a class="enlace" [routerLink]="['/noticia', noticias.id]"><h2> {{noticias.titulo}}</h2></a>
           <a href="#">

@@ -3,6 +3,8 @@ import { ClimaService } from 'src/app/services/clima.service';
 import { NoticiaService } from 'src/app/services/noticia.service';
 import { MatDialog } from '@angular/material/dialog';
 import { FarmaciamodalComponent } from '../farmaciamodal/farmaciamodal.component';
+import { EstadoCategoriaService } from 'src/app/services/estado-categoria.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +18,9 @@ export class HeaderComponent implements OnInit{
 
   constructor(private climaService:ClimaService,
                private noticiaService:NoticiaService,
-               public dialog: MatDialog){}
+               public dialog: MatDialog,
+               private estadoCategoriaService:EstadoCategoriaService,
+               private router:Router){}
   ngOnInit(): void {
     this.fechaActual = new Date();
     this.fechaFormateada = this.formatoFecha(this.fechaActual);
@@ -82,5 +86,22 @@ export class HeaderComponent implements OnInit{
       height: '80%', // Altura del modal
       panelClass: 'custom-dialog-container' // Clase CSS personalizada para el modal
     });
+  }
+
+  seleccionarCategoria(categoria: string) {
+    console.log(categoria)
+    this.estadoCategoriaService.setCategoriaSeleccionada(categoria);
+    this.mostrarMenu = false;
+    this.router.navigate(['/all-noticias'], { queryParams: { categoria: categoria } });
+  }
+
+  formatearCategoria() {
+    this.estadoCategoriaService.setCategoriaSeleccionada("todas"); // o tu valor predeterminado que indica sin filtro
+    // Navegar a AllNoticias para forzar la recarga
+    this.mostrarMenu = false;
+  };
+
+  closeMenu(){
+    this.mostrarMenu = false;
   }
 }
