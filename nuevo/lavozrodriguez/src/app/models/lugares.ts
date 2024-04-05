@@ -9,4 +9,5 @@ export class Lugar{
     ruta_img:String='';
     instagram:String='';
     facebook:String='';
+    categoria:String="";
 }

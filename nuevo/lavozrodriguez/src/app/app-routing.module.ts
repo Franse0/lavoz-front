@@ -11,6 +11,7 @@ import { AllNoticiasComponent } from './componentes/all-noticias/all-noticias.co
 import { NoticiaIndComponent } from './componentes/all-noticias/noticia-ind/noticia-ind.component';
 import { GuitaTelefonicaComponent } from './componentes/guia-telefonica/guia-telefonica.component';
 import { LugaresComponent } from './componentes/lugares/lugares.component';
+import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/resultado-busqueda.component';
 
 const routes: Routes = [
   {path:"admin", component:AdminComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
 
   {path:"guia-telefonica", component:GuitaTelefonicaComponent},
   {path:"guia-comercios", component:LugaresComponent},
+  {path:"resultados-busqueda", component:ResultadoBusquedaComponent},
 
 
 

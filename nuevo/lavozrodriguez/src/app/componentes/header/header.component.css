@@ -141,6 +141,11 @@ nav{
 .nav-links{
     display: none;
 }
+.btn{
+    background: none;
+    border: none;
+    display: flex;
+}
 @media(min-width:790px){
     .menu>div{
         width: 100%;

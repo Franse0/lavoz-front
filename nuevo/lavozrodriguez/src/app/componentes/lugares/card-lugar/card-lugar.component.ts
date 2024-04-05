@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { LugarService } from 'src/app/services/lugar.service';
 
 @Component({
   selector: 'app-card-lugar',
@@ -8,13 +9,23 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class CardLugarComponent {
   @Input() comercios: any[] = [];
+  lugaresTodos:any[]=[]
+  sanitizedGoogleMapsUrl: SafeResourceUrl="";
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer, private lugaresService:LugarService) {}
 
   ngOnInit(): void {
-    this.comercios.forEach(comercio => {
-      console.log(comercio)
-    });
+    this.lugaresService.lugarTodos().subscribe(data=>{
+      this.lugaresTodos=data
+      if (this.lugaresTodos.length > 0) {
+        const iframeCode = this.lugaresTodos[0].ubicacion_map; // Ajusta el nombre según tus datos reales
+        this.sanitizeHtmlContent(iframeCode.toString());
+      }
+    })
+  }
+
+  sanitizeHtmlContent(html: string): void {
+    this.sanitizedGoogleMapsUrl = this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
 

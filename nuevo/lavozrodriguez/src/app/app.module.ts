@@ -34,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LugaresComponent } from './componentes/lugares/lugares.component';
 import { CardLugarComponent } from './componentes/lugares/card-lugar/card-lugar.component';
+import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/resultado-busqueda.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { CardLugarComponent } from './componentes/lugares/card-lugar/card-lugar.
     CardGuiaComponent,
     FarmaciamodalComponent,
     LugaresComponent,
-    CardLugarComponent
+    CardLugarComponent,
+    ResultadoBusquedaComponent
   ],
   imports: [
     BrowserModule,

@@ -9,8 +9,8 @@
             <th>VENTA</th>
           </tr>
           <tr>
-            <th>$1000</th>
-            <th>$1020</th>
+            <th>${{dolar.compra}} </th>
+            <th>${{dolar.venta}}</th>
           </tr>
         </table>
       </div>
@@ -61,16 +61,21 @@
           >
         </li>
       </ul>
-      <div class="buscador">
-        <i class="fa-solid fa-search" (click)="buscar()"></i>
+      <div class="buscador"> 
+       
+          <i class="fa-solid fa-search" (keydown)="buscar()" (click)="buscar()"></i>
         <input
           type="text"
+          (keypress)="buscarConEnter($event)"
           name=""
           id=""
           *ngIf="buscarValue"
           class="input-search"
           #buscador
+          autofocus
         />
+
+        
       </div>
     </div>
   </nav>

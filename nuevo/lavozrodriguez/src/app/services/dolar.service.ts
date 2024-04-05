@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DolarService {
-  apiUrl =
-    'Authorization: BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDM0NzUyNjQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJwYW5jaHltYXJpbi5mbUBnbWFpbC5jb20ifQ.yvefqN3l-ifYVidvbZUPewUtgEbHYD7c816zBAfhShH-violdRn4ogGwbmq8cKDd2be4ux5UN8Ge5CnBkuvPPQ';
+  apiUrl ="https://dolarapi.com/v1/dolares/oficial";
+
     constructor(private http: HttpClient) { }
     
 
-    getWeather(): Observable<any> {
+    getDolar(): Observable<any> {
       return this.http.get(this.apiUrl);
     }}

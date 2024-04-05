@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { LugarService } from 'src/app/services/lugar.service';
 
@@ -28,6 +29,7 @@ export class LugaresComponent {
   veterinariasList: any[] = [];
 
   parametroDeRuta: any="";
+  sanitizedGoogleMapsUrl: SafeResourceUrl="";
 
   constructor(private lugaresService:LugarService,
               private route:ActivatedRoute){}
@@ -123,5 +125,6 @@ export class LugaresComponent {
     this.veterinaria=!this.veterinaria
   }
 
+  
   
 }

@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FarmaciamodalComponent } from '../farmaciamodal/farmaciamodal.component';
 import { EstadoCategoriaService } from 'src/app/services/estado-categoria.service';
 import { Router } from '@angular/router';
+import { DolarService } from 'src/app/services/dolar.service';
 
 @Component({
   selector: 'app-header',
@@ -13,19 +14,25 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
   clima:any;
+  dolar:any;
   fechaActual: Date | undefined;
   fechaFormateada: string | undefined;
 
   constructor(private climaService:ClimaService,
-               private noticiaService:NoticiaService,
-               public dialog: MatDialog,
-               private estadoCategoriaService:EstadoCategoriaService,
-               private router:Router){}
+              private noticiaService:NoticiaService,
+              public dialog: MatDialog,
+              private estadoCategoriaService:EstadoCategoriaService,
+              private router:Router,
+              private dolarService:DolarService){}
   ngOnInit(): void {
     this.fechaActual = new Date();
     this.fechaFormateada = this.formatoFecha(this.fechaActual);
     this.climaService.getWeather().subscribe(data=>{
       this.clima=data
+    })
+    this.dolarService.getDolar().subscribe(data=>{
+      this.dolar=data
+      console.log( "dolar",this.dolar)
     })
   }
   mostrarMenu: boolean = false; // Controla la visibilidad del menú completo
@@ -66,18 +73,6 @@ export class HeaderComponent implements OnInit{
     return formatoLocal.charAt(0).toUpperCase() + formatoLocal.slice(1); // Capitalizar primera letra del mes
   }
 
-  buscar() {
-    // Verifica si el elemento input existe y tiene un valor
-    if (this.buscador && this.buscador.nativeElement.value) {
-      console.log('estoy buscando', this.buscador.nativeElement.value)
-      this.noticiaService.buscarNoticia(this.buscador.nativeElement.value).subscribe(data => {
-        console.log(data);
-      });
-    } else {
-      this.buscarValue = !this.buscarValue;
-      console.log(this.buscarValue);
-    }
-  }
 
   openModal(event:Event): void {
     event.preventDefault()
@@ -103,5 +98,25 @@ export class HeaderComponent implements OnInit{
 
   closeMenu(){
     this.mostrarMenu = false;
+  }
+
+  
+  buscar() {
+    // Verifica si el elemento input existe y tiene un valor
+    if (this.buscador && this.buscador.nativeElement.value) {
+      console.log('estoy buscando', this.buscador.nativeElement.value);
+      const busquedaValue = this.buscador.nativeElement.value;
+      this.buscador.nativeElement.value=''  
+      // Usar el servicio Router para navegar
+      this.router.navigate(['/resultados-busqueda'], { queryParams: { categoria: busquedaValue } });
+    } else {
+      this.buscarValue = !this.buscarValue;
+      console.log(this.buscarValue);
+    }
+  }
+  buscarConEnter(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.buscar();
+    }
   }
 }

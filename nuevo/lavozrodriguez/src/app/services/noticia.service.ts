@@ -42,7 +42,7 @@ export class NoticiaService {
   }
 
   
-  buscarNoticia(parametro:String):Observable<any>{
+  buscarNoticia(parametro:string):Observable<any>{
     return this.http.get<any[]>(`${this.url}/noticia/buscar/${parametro}`)
   }
   private noticiaIdSource = new BehaviorSubject<number | null>(null);

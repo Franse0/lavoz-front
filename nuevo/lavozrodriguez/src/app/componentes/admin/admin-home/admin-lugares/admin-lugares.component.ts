@@ -23,6 +23,7 @@ export class AdminLugaresComponent {
       ruta_img:["",[Validators.required]],
       instagram:["",[]],
       facebook:["",[]],
+      categoria:["",[]],
     })
   }
 
@@ -42,6 +43,7 @@ export class AdminLugaresComponent {
     ruta_img:this.formAdmin.value.ruta_img,
     instagram:this.formAdmin.value.instagram,
     facebook:this.formAdmin.value.facebook,
+    categoria:this.formAdmin.value.categoria,
     }
     this.lugarService.lugarAgregar(lugar).subscribe()
     this.formAdmin.reset()
