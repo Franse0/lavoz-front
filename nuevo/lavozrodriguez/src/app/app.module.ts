@@ -35,6 +35,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LugaresComponent } from './componentes/lugares/lugares.component';
 import { CardLugarComponent } from './componentes/lugares/card-lugar/card-lugar.component';
 import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/resultado-busqueda.component';
+import { UploadComponent } from './componentes/admin/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ResultadoBusquedaComponent } from './componentes/resultado-busqueda/res
     FarmaciamodalComponent,
     LugaresComponent,
     CardLugarComponent,
-    ResultadoBusquedaComponent
+    ResultadoBusquedaComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,6 @@ export class AdminNoticiasComponent {
       cuerpo:["", [Validators.required]],  
       resumen: ["", [Validators.required]],
       fecha_publi: ["", [Validators.required]],
-      img: ["", [Validators.required]],
       url_img: ["", [Validators.required]],
       categoria: ["", [Validators.required]],
     })
@@ -52,7 +51,6 @@ export class AdminNoticiasComponent {
     cuerpo: this.decodeHtml(this.formAdmin.value.cuerpo),
     resumen:this.formAdmin.value.resumen,
     fecha_publi:this.formAdmin.value.fecha_publi,
-    img:this.formAdmin.value.img,
     url_img:this.formAdmin.value.url_img,
     categoria:this.formAdmin.value.categoria,
 

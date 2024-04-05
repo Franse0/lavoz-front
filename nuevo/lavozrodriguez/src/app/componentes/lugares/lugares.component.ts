@@ -60,7 +60,7 @@ export class LugaresComponent {
           case 'pago-facil':
             this.pagoFacilList.push(comercio);
             break;
-          case 'veterinarias':
+          case 'veterinaria':
             this.veterinariasList.push(comercio);
             break;
         }

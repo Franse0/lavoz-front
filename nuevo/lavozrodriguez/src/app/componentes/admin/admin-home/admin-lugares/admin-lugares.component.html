@@ -26,10 +26,8 @@
         <label for="horario">Horario</label>
         <input type="text" placeholder="Horario" id="Horario" formControlName="horario">
     </div>
-    <div class="form-input">
-        <label for="img">Imagenes</label>
-        <input type="text" placeholder="Imagenes" id="img" formControlName="img">
-    </div>
+ 
+    <app-upload></app-upload>
     <div class="form-input">
         <label for="ruta-img">Ruta de imagen</label>
         <input type="text" placeholder="Ruta de imagen" id="ruta-img" formControlName="ruta_img">
@@ -46,13 +44,13 @@
         <label for="categoria">Categoria</label>
         <select type="" placeholder="Catgoria" id="categoria"  formControlName="categoria">
             <option value="restaurante-bar">Bar Restaurante</option>
-            <option value="cafeteria">Salud</option>
-            <option value="centro_deportivo">Cafeteria</option>
-            <option value="correo">Centros Deportivos</option>    
-            <option value="ferreteria">Correo</option>    
-            <option value="gomeria">ferreteria</option>    
-            <option value="pago-facil">gomeria</option>    
-            <option value="veterinarias ">pago-facil/rapipago</option>    
+            <option value="cafeteria">Cafeteria</option>
+            <option value="centro_deportivo">Centros Deportivos</option>    
+            <option value="correo">Correo</option>    
+            <option value="ferreteria">Ferreteria</option>
+            <option value="gomeria">Gomeria</option>    
+            <option value="pago-facil">Pago-facil/rapipago</option>    
+            <option value="veterinaria">Veterinaria</option>
         </select>
     </div>
     <button type="submit">Ingresar</button>

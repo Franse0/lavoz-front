@@ -4,7 +4,6 @@ export class Noticia {
     cuerpo:String='';
     resumen:String='';
     fecha_publi:String='';
-    img:String='';
     url_img:String='';
     categoria:String='';
 }

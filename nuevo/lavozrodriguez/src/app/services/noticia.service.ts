@@ -32,11 +32,26 @@ export class NoticiaService {
     return this.http.get(this.url+"/noticia/"+id);
   }
 
-  noticiasAgregar(noticia:Noticia):Observable<Noticia>{
-    console.log(noticia)
-    return this.http.post<Noticia>(this.url+"/noticia/cargar", noticia);
-  }
+  // noticiasAgregar(noticia:Noticia):Observable<Noticia>{
+  //   console.log(noticia)
+  //   return this.http.post<Noticia>(this.url+"/noticia/cargar", noticia);
+  // }
+  // noticiasAgregar(titulo: string, cuerpo: string, resumen: string, fecha_publi: string, img: File, url_img: string, categoria: string): Observable<Noticia> {
+  //   const formData: FormData = new FormData();
+  //   formData.append('titulo', titulo);
+  //   formData.append('cuerpo', cuerpo);
+  //   formData.append('resumen', resumen);
+  //   formData.append('fecha_publi', fecha_publi);
+  //   formData.append('img', img);
+  //   formData.append('url_img', url_img);
+  //   formData.append('categoria', categoria);
+  
+  //   return this.http.post<Noticia>(this.url + "/noticia/cargar", formData);
+  // }
 
+  noticiasAgregar(noticia:Noticia): Observable<Noticia> {
+    return this.http.post<Noticia>(this.url + "/noticia/cargar", noticia);
+  }
   noticiasBorrar(id:number):Observable<any>{
     return this.http.delete(this.url+"/noticia/borrar/"+id);
   }
