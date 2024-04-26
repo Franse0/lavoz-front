@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DolarService {
-  apiUrl ="https://dolarapi.com/v1/dolares/oficial";
+  apiUrl ="https://dolarapi.com/v1/dolares/blue";
 
     constructor(private http: HttpClient) { }
     

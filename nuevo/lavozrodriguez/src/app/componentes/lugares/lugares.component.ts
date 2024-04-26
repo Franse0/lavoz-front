@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -32,9 +33,11 @@ export class LugaresComponent {
   sanitizedGoogleMapsUrl: SafeResourceUrl="";
 
   constructor(private lugaresService:LugarService,
-              private route:ActivatedRoute){}
+              private route:ActivatedRoute,
+              private viewScroll:ViewportScroller){}
 
   ngOnInit(): void {
+    this.viewScroll.scrollToPosition([0,0])
     this.chequearParametro()
     this.lugaresService.lugarTodos().subscribe(data => {    
       data.forEach((comercio: any) => {
@@ -80,7 +83,9 @@ export class LugaresComponent {
           this.cafeteria=true;
           break;
         case "centro-deportivo":
+          console.log("daleeeeee")
           this.centroDeportivo=true;
+          console.log(this.centroDeportivo)
           break;
         case "correo":
           this.correo=true;     
@@ -102,6 +107,7 @@ export class LugaresComponent {
   }
   guiaRestarurantes(){
     this.restauranteBar=!this.restauranteBar
+    console.log(this.restaruanteList)
   }
   guiaCafeteria(){
     this.cafeteria=!this.cafeteria

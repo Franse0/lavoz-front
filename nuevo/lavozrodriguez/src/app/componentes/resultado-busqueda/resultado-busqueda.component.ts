@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NoticiaService } from 'src/app/services/noticia.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class ResultadoBusquedaComponent implements OnInit{
   noResultados:boolean=false
   siResultados:boolean=false
   constructor( private route:ActivatedRoute
-              ,private noticiasService:NoticiaService
+    ,private noticiasService:NoticiaService,
+    private router:Router,
   ){
 
   }
@@ -38,5 +39,9 @@ export class ResultadoBusquedaComponent implements OnInit{
         }
       });
     })
+  }
+
+  ira(id:number){
+    this.router.navigate(['noticia', id])
   }
 }

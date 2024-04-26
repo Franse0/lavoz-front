@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Lugar } from '../models/lugares';
 
 @Injectable({
@@ -9,8 +9,9 @@ import { Lugar } from '../models/lugares';
 export class LugarService {
 
 
-  url: string = "http://localhost:8080";
-  // url: string = "http://62.72.26.208:8080/api";
+  // url: string = "http://localhost:8080";
+  // url: string = "http://77.37.126.139:8080";
+  url: string = "https://lavozdegr.com/api";
 
 
 
@@ -31,7 +32,11 @@ export class LugarService {
   lugarBorrar(id:number):Observable<any>{
     return this.http.delete(this.url+"/lugares/borrar/"+id);
   }
-  buscarLocales(parametro:String):Observable<any>{
-    return this.http.get<any[]>(`${this.url}/lugar/buscar/${parametro}`)
+
+
+  private lugarIdSource = new BehaviorSubject<number | null>(null);
+  currentLugarId = this.lugarIdSource.asObservable();
+  changeNoticiaId(id: number) {
+    this.lugarIdSource.next(id);
   }
 }

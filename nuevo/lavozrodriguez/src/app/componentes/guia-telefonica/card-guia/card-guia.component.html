@@ -2,17 +2,23 @@
   <div class="card-telefonica celu" *ngFor="let numero of numeros">
     <h3>{{numero.nombre}} </h3>
     <p>{{numero.Ubicacion}}</p>
-    <div class="iframe-container" [innerHTML]="sanitizedGoogleMapsUrl">
+    <i class="fa-solid fa-pen-to-square" (click)="editar(numero.id, $event)" *ngIf="mostrarId"></i>
+    <i class="fa-solid fa-trash link" (click)="borar(numero.id)" *ngIf="mostrarId"></i>
+    <div class="iframe-container" [innerHTML]="numero.ubicacion_map_sanitized">
       
     </div>
-    <button class="btn-guia red">LLAMAR</button>
-    <button class="btn-guia "> AGENDAR</button>
+    <a href="tel:{{numero.telefono_prin}} " class="btn-guia red">LLAMAR</a>
+    <a href="tel:{{numero.telefono_prin}} " class="btn-guia">AGENDAR</a>
   </div>
 </div>
 
 <div class="card-telefonica compu" *ngFor="let numero of numeros">
   <div class="container">
     <h3 class="tiulo">{{numero.nombre}}</h3>
+   <div *ngIf="mostrarId">
+    <i class="fa-solid fa-pen-to-square" (click)="editar(numero.id, $event)" ></i>
+    <i class="fa-solid fa-trash link" (click)="borar(numero.id)" ></i>
+   </div>
     <div class="card-conteiner">
       <div class="izquierda">
         <p class="direcion"><strong>{{numero.ubicacion}}</strong></p>
@@ -27,9 +33,8 @@
           </li>
         </ul>
       </div>
-      <div class="derecha"  [innerHTML]="sanitizedGoogleMapsUrl">
+      <div class="derecha"  [innerHTML]="numero.ubicacion_map_sanitized" >
       <div  class="ubicacion">
-
       </div>
       </div>
     </div>

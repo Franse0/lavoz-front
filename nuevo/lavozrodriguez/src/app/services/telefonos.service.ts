@@ -9,8 +9,12 @@ import { Telefonos } from '../models/telefonos';
 export class TelefonosService {
 
    
-  url: string = "http://localhost:8080";
-  // url: string = "http://62.72.26.208:8080/api";
+  // url: string = "http://77.37.126.139:8080";
+  url: string = "https://lavozdegr.com/api";
+  // url: string = "https://lavozdegr.com/api";
+
+
+
 
 
 
@@ -33,4 +37,9 @@ export class TelefonosService {
   }
 
 
+  private telefonoIdSource = new BehaviorSubject<number | null>(null);
+  currentTelefonoId = this.telefonoIdSource.asObservable();
+  changeTelefonoId(id: number) {
+    this.telefonoIdSource.next(id);
+  }
 }

@@ -21,9 +21,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60px;
     text-align: center;
     font-size: small;
+}
+table{
+    line-height: .7rem;
 }
 .temp-container{
     width: 100%;
@@ -93,6 +95,11 @@ nav{
 
     .nav-items{
         font-size: 1rem;
+        
+    }
+    .nav-items>a:hover{
+        font-size: 1rem;
+        text-decoration: underline;
     }
     .dolar{
         display:block;
@@ -102,6 +109,9 @@ nav{
     }
     .nav-links{
         flex-direction: row-reverse;
+    }
+    .enlace:hover{
+        text-decoration: underline;
     }
 }
 
@@ -132,6 +142,9 @@ nav{
     min-height: 150px;
     height: auto;
     align-items: center;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
 }
 
 

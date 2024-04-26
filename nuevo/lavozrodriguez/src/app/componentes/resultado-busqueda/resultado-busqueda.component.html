@@ -18,11 +18,11 @@
 
       <div class="card-search" *ngFor="let noticia of busquedaList" >
         <div class="img-container">
-            <img src="/assets/dengue.jpg" alt="" class="img">
+            <img [src]="noticia.url_img" alt="" class="img">
         </div>
         <div class="info-sarch-container">
           <!-- <h4>{{titulo}} </h4> -->
-          <h3 class="enlace">{{noticia.titulo}} </h3    >
+          <h3 class="enlace" (click)="ira(noticia.id)" >{{noticia.titulo}} </h3    >
           <!-- <p>{{resumen}} </p> -->
           <div class="description-card-peque">
             <p>

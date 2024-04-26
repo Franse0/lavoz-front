@@ -75,6 +75,8 @@
         background-color: white;
         min-height: 90vh;
     }
- 
+    .guia-options{
+        padding: .3rem 2rem;
+    }
 }
 

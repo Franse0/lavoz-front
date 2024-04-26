@@ -6,6 +6,7 @@ export class Lugar{
     ubicacion_map:String='';
     horario:String='';
     ruta_img:String='';
+    ruta_img2:String='';
     instagram:String='';
     facebook:String='';
     categoria:String="";

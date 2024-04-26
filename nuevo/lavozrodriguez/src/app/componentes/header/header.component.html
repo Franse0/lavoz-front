@@ -16,7 +16,7 @@
       </div>
       <a href="">
         <div class="logo-container">
-          <h1><span>...</span>LA VOZ<span>...</span></h1>
+            <img src="/assets/logo.png" alt="" width="130px">
         </div>
       </a>
       <div class="widget-container">
@@ -103,7 +103,7 @@
             <li (click)="seleccionarCategoria('educacion')" class="enlace">
               Educacion
             </li>
-            <li (click)="seleccionarCategoria('Salud')" class="enlace">
+            <li (click)="seleccionarCategoria('salud')" class="enlace">
               Salud
             </li>
             <li (click)="seleccionarCategoria('seguridad')" class="enlace">
@@ -163,12 +163,9 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div>
-        <div>
-          <!-- Este capaz puede ser sacado para evitar ser redundante -->
-          <li><i class="fa-solid fa-caret-right"></i>Farmacia 24 horas</li>
-        </div>
+      <!-- </div>
+      <div> -->
+
         <div>
           <li class="enlace" (click)="submenuComercios()">
             <i class="fa-solid fa-caret-right"></i>Comercios
@@ -188,7 +185,7 @@
             (click)="closeMenu()"
             class="enlace">Cafeteria</li>
             <li [routerLink]="['/guia-comercios']"
-            [queryParams]="{ categoria: 'centros-deportivo' }"
+            [queryParams]="{ categoria: 'centro-deportivo' }"
             (click)="closeMenu()"
             class="enlace">Centros deportivos</li>
             <li [routerLink]="['/guia-comercios']"

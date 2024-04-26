@@ -2,7 +2,7 @@
   <div class="celu">
     <a class="card-noticia enlace" *ngFor="let noticia of noticias"  [routerLink]="['/noticia', noticia.id]">
       <div class="img-container">
-      <img [src]="noticia.url_img" alt=""  class="img" style="height: 100vh;"/> 
+      <img [src]="noticia.url_img" alt=""  class="img" /> 
       </div>
       <div class="category-info">
         <p><span class="span-card">Noticia</span>{{noticia.categoria}}</p>  
@@ -42,5 +42,4 @@
     </div>  
   </div>
 
-  
   </section>

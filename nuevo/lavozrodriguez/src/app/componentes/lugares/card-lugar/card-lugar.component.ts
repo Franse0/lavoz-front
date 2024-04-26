@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { Observable, forkJoin, of } from 'rxjs';
 import { LugarService } from 'src/app/services/lugar.service';
 
 @Component({
@@ -12,23 +14,53 @@ export class CardLugarComponent {
   lugaresTodos:any[]=[]
   sanitizedGoogleMapsUrl: SafeResourceUrl="";
 
-  constructor(private sanitizer: DomSanitizer, private lugaresService:LugarService) {}
+  mostrarId:boolean=false
+  constructor(private sanitizer: DomSanitizer,
+    private router:Router,
+     private lugaresService:LugarService) {}
+     
 
   ngOnInit(): void {
-    this.lugaresService.lugarTodos().subscribe(data=>{
-      this.lugaresTodos=data
-      if (this.lugaresTodos.length > 0) {
-        const iframeCode = this.lugaresTodos[0].ubicacion_map; // Ajusta el nombre según tus datos reales
-        this.sanitizeHtmlContent(iframeCode.toString());
-      }
-    })
-  }
+    if (this.router.url.includes("/admin-lugares")) {
+      console.log("Daleeee")
+      this.mostrarId = true;
+    }
+    // console.log(this.comercios)  
+    this.sanitizeNumeros(this.comercios);
 
-  sanitizeHtmlContent(html: string): void {
-    this.sanitizedGoogleMapsUrl = this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
 
+  sanitizeNumeros(comercios: any[]): void {
+    const observables = comercios.map(comercio => {
+      const ubicacionMap = comercio.ubicacion_map.toString();
+      const sanitizedUrl = this.sanitizer.bypassSecurityTrustHtml(ubicacionMap);
+      return this.sanitizeUbicacionMap(sanitizedUrl);
+    });
 
+    forkJoin(observables).subscribe(sanitizedMaps => {
+      this.comercios = comercios.map((comercio, index) => ({
+        ...comercio,
+        ubicacion_map_sanitized: sanitizedMaps[index]
+      }));
+    });
+  }
 
+  sanitizeUbicacionMap(sanitizedUrl: SafeHtml): Observable<SafeHtml> {
+    // Aquí podrías realizar cualquier otra operación de sanitización necesaria
+    return of(sanitizedUrl);
+  }
+
+  editar(id: number,  event:Event) {
+    event.preventDefault()
+    console.log(id)
+    this.lugaresService.changeNoticiaId(id);
+  }
+
+   
+  borar(id:number){
+    if(window.confirm(`Seguro deseas eliminar el item con el id:${id}`)){
+      this.lugaresService.lugarBorrar(id).subscribe()
+    }
+  } 
 }

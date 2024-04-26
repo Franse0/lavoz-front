@@ -1,5 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TelefonosService } from 'src/app/services/telefonos.service';
 
 @Component({
@@ -21,10 +22,14 @@ export class GuitaTelefonicaComponent  implements OnInit{
     seguridadList: any[] = [];
     personasList: any[] = [];
 
-    constructor(private telefonoService:TelefonosService, private route:ActivatedRoute){}
+
+    constructor(private telefonoService:TelefonosService, private route:ActivatedRoute,
+      private viewScroller:ViewportScroller
+    ){}
 
     ngOnInit(): void {
-      this.route.queryParams.subscribe(params => {
+      this.viewScroller.scrollToPosition([0,0])
+      this.route.queryParams.subscribe(params => {  
         this.parametroDeRuta = params['categoria'];
         console.log("soy el parametro",this.parametroDeRuta)
         switch(this.parametroDeRuta){

@@ -1,68 +1,65 @@
 <div class="cards-container-celu">
-  <div class="card-lugar" *ngFor=" let comercio of comercios">
+  <div class="card-lugar" *ngFor="let comercio of comercios">
     <div class="title-card">
       <div class="title">
-        <h2>{{comercio.nombre}} </h2>
+        <h2>{{ comercio.nombre }}</h2>
       </div>
       <div class="icons">
-        <a [href]="comercio.instagram">
+        <a [href]="comercio.instagram" target="_blank">
           <img src="/assets/instagram.png" alt="" class="icon" />
         </a>
-        <a [href]="comercio.facebook">
+        <a [href]="comercio.facebook" target="_blank">
           <img src="/assets/facebook.png" alt="" class="icon" />
         </a>
-        <a [href]="comercio.telefono">
+        <a [href]="comercio.telefono" target="_blank">
           <img src="/assets/llamada-telefonica.png" alt="" class="icon" />
         </a>
       </div>
     </div>
     <div class="horario">
       <p class="horario-description">
-        {{comercio.horario}}
+        {{ comercio.horario }}
       </p>
     </div>
     <div class="imagenes-card">
-      <img src="/assets/dengue.jpg" alt="" class="img-card" />
-      <img src="/assets/dengue.jpg" alt="" class="img-card" />
+      <img [src]="comercio.ruta_img" alt="" class="img-card" />
+      <img [src]="comercio.ruta_img2" alt="" class="img-card" />
     </div>
-    <div class="iframe-container"   [innerHTML]="sanitizedGoogleMapsUrl">
-  
-    </div>
+    <div class="iframe-container" [innerHTML]="comercio.ubicacion_map_sanitized"></div>
   </div>
-
-  
-  
 </div>
-<div class="cards-container-computer"  *ngFor=" let comercio of comercios">
-  <div class="card-lugar">
+<div class="cards-container-computer">
+  <div class="card-lugar" *ngFor="let comercio of comercios">
     <div class="title-card">
       <div class="title">
-        <h2>{{comercio.nombre}} </h2>
+        <h2>{{ comercio.nombre }}</h2>
       </div>
-      <div class="icons">
-        <a [href]="comercio.instagram">
+      <div class="icons" *ngIf="mostrarId">
+        <i class="fa-solid fa-pen-to-square" (click)="editar(comercio.id, $event)" ></i>
+        <i class="fa-solid fa-trash link" (click)="borar(comercio.id)" ></i>
+      </div>
+      <div class="icons" *ngIf="!mostrarId">
+        <a [href]="comercio.instagram" target="_blank" *ngIf="comercio.instagram">
           <img src="/assets/instagram.png" alt="" class="icon" />
         </a>
-        <a [href]="comercio.facebook">
+        <a [href]="comercio.facebook" target="_blank" *ngIf="comercio.facebook"> 
           <img src="/assets/facebook.png" alt="" class="icon" />
         </a>
-        <a [href]="comercio.telefono">
+        <a [href]="'tel:'+comercio.telefono" target="_blank" *ngIf="comercio.telefono">
           <img src="/assets/llamada-telefonica.png" alt="" class="icon" />
         </a>
       </div>
     </div>
     <div class="horario">
       <p class="horario-description">
-        {{comercio.horario}}
+        {{ comercio.horario }}
       </p>
     </div>
     <div class="imagenes-card">
-      <img src="/assets/dengue.jpg" alt="" class="img-card" />
-      <img src="/assets/dengue.jpg" alt="" class="img-card" />
+      <img [src]="comercio.ruta_img" alt="" class="img-card" />
+      <img [src]="comercio.ruta_img2" alt="" class="img-card" />
     </div>
-    <div class="iframe-container" [innerHTML]="sanitizedGoogleMapsUrl">
-      
-    </div>
+    <div class="iframe-container" [innerHTML]="comercio.ubicacion_map_sanitized"></div>
   </div>
-
 </div>
+

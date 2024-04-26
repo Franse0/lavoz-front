@@ -58,7 +58,7 @@ export class AdminNoticiasComponent {
     console.log(noticia)
     this.noticiaService.noticiasAgregar(noticia).subscribe(()=>{
       alert("noticia cargada con exito");
-      this.formAdmin.reset();
+      // this.formAdmin.reset();
       this.noticiaService.notificarActualizacionDeNoticias()
     });
     

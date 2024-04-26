@@ -33,7 +33,14 @@ i:nth-child(2){
 .links-navegacion{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
 }
+.navegacion{
+    width: 50%;
+
+}
+
 .logo-container{
     display: flex;
     align-items: center;
@@ -73,7 +80,17 @@ i:nth-child(2){
     padding: 1.5rem 0rem;
     padding-bottom: 2rem;
 }
+.img{
+    width: 70%;
+}
 @media (min-width:790px){
+    
+.sumar{
+    justify-content:flex-start;
+}
+    .img{
+        width: 50%;
+    }
     .pre-pie-pagina{
         display: grid;
         grid-template-columns:1fr 1fr 1fr;
@@ -82,7 +99,6 @@ i:nth-child(2){
 
     .links-navegacion{
         grid-area: 1/1/2/3;
-        display: flex;
-        justify-content: space-around;
+        /* display: flex; */
     }
 }

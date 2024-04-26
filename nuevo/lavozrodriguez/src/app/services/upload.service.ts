@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class UploadService {
 
-  url: string = "http://localhost:8080";
+  // url: string = "http://77.37.126.139:8080";
+  url: string = "https://lavozdegr.com/api";
+
 
 
 

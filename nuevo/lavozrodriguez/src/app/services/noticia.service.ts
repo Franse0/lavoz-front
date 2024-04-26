@@ -9,8 +9,9 @@ import { Noticia } from '../models/noticicia';
 export class NoticiaService {
 
    
-  url: string = "http://localhost:8080";
-  // url: string = "http://62.72.26.208:8080/api";
+  // url: string = "http://77.37.126.139:8080";
+  url: string = "https://lavozdegr.com/api";
+
   
   private actualizacionNoticiasSource = new BehaviorSubject<boolean>(false);
   actualizacionNoticias$ = this.actualizacionNoticiasSource.asObservable();
@@ -32,22 +33,6 @@ export class NoticiaService {
     return this.http.get(this.url+"/noticia/"+id);
   }
 
-  // noticiasAgregar(noticia:Noticia):Observable<Noticia>{
-  //   console.log(noticia)
-  //   return this.http.post<Noticia>(this.url+"/noticia/cargar", noticia);
-  // }
-  // noticiasAgregar(titulo: string, cuerpo: string, resumen: string, fecha_publi: string, img: File, url_img: string, categoria: string): Observable<Noticia> {
-  //   const formData: FormData = new FormData();
-  //   formData.append('titulo', titulo);
-  //   formData.append('cuerpo', cuerpo);
-  //   formData.append('resumen', resumen);
-  //   formData.append('fecha_publi', fecha_publi);
-  //   formData.append('img', img);
-  //   formData.append('url_img', url_img);
-  //   formData.append('categoria', categoria);
-  
-  //   return this.http.post<Noticia>(this.url + "/noticia/cargar", formData);
-  // }
 
   noticiasAgregar(noticia:Noticia): Observable<Noticia> {
     return this.http.post<Noticia>(this.url + "/noticia/cargar", noticia);
@@ -62,6 +47,7 @@ export class NoticiaService {
   }
   private noticiaIdSource = new BehaviorSubject<number | null>(null);
   currentNoticiaId = this.noticiaIdSource.asObservable();
+  
   changeNoticiaId(id: number) {
     this.noticiaIdSource.next(id);
   }

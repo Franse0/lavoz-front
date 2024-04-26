@@ -16,6 +16,7 @@
     opacity: .8;
     font-size: 14px;
     padding: 0;
+    margin-bottom: 20px;
 }
 /*  */
 .enlace{
@@ -23,7 +24,7 @@
 }
 
 .list-noticias-container{
-    gap: 5%;
+    gap: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr ;
     padding: 0 1rem;

@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Noticia } from 'src/app/models/noticicia';
 import { EstadoCategoriaService } from 'src/app/services/estado-categoria.service';
@@ -21,9 +21,13 @@ export class AllNoticiasComponent {
   constructor(private noticiaService:NoticiaService,
     private viewportScroller: ViewportScroller, 
     private router:Router,
-    private estadoCategoriasService: EstadoCategoriaService){}
+    private estadoCategoriasService: EstadoCategoriaService,
+){}
 
     ngOnInit(): void {
+      if(this.router.url.includes("/admin-noticias")){
+        this.mostrarId=true;
+      }
       this.viewportScroller.scrollToPosition([0, 0]); 
       this.suscripcion = this.noticiaService.actualizacionNoticias$.subscribe((actualizacion) => {
         if (actualizacion) {
@@ -50,12 +54,12 @@ export class AllNoticiasComponent {
     if(categoria==="todas"){
       console.log("la categoria es todas")
       this.noticiaService.noticiasTodos().subscribe(data=>{
-        this.noticias=data
+        this.noticias=data.reverse()
       })
     } else{
       this.noticiaService.noticiasTodos().subscribe(
         (data: any[]) => {
-          this.noticias = data.filter(noticia => noticia.categoria === categoria);
+          this.noticias = data.filter(noticia => noticia.categoria === categoria).reverse();
         },
         error => {
           console.error('Error al obtener las noticias:', error);
@@ -67,7 +71,7 @@ export class AllNoticiasComponent {
   obtenerTodasLasNoticias() {
     this.noticiaService.noticiasTodos().subscribe(
       (data: any[]) => {
-        this.noticias = data;
+        this.noticias = data.reverse();
       },
       error => {
         console.error('Error al obtener las noticias:', error);

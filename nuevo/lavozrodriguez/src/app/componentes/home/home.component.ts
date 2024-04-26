@@ -15,21 +15,10 @@ noticias_mas:any;
   ngOnInit(): void {
     this.noticiasService.noticiasTodos().subscribe(data=>{
       this.noticias=data.slice(-1)
-      this.noticias_mas=data.slice(0, 3)
+      this.noticias_mas=data.slice(-3).reverse()
       console.log("noticias", this.noticias_mas)
-      // this.noticias.forEach((noticia:any) => {
-        // this.obtenerImagenDeNoticia(noticia.id)
-      // });
+
     })
   }
-  obtenerImagenDeNoticia(idNoticia: number): void {
-    this.noticiasService.obtenerImagen(idNoticia).subscribe(
-      imagen => {
-        console.log(imagen)
-      },  
-      error => {
-        console.error('Error al cargar la imagen:', error);
-      }
-    );
-  }
+
 }
