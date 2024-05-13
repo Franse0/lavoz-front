@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NoticiaIndComponent {
   noticia:Noticia | undefined;
-  noticiaAside!: any[];
+  noticiaAside: any[]=[]
   noticiasMas:Noticia[] | undefined;
 
   constructor(private noticiaService:NoticiaService ,private route:ActivatedRoute,private viewportScroller: ViewportScroller){}
@@ -31,10 +31,8 @@ export class NoticiaIndComponent {
     this.viewportScroller.scrollToPosition([0, 0]);
     // const id = Number((event.target as HTMLElement).id);
     if (id !== 0) {
-      console.log(id);
       this.noticiaService.noticiasParticular(id).subscribe(data => {
         this.noticia = data;
-        console.log("data", data);
         this.getNoticiasAside();
       });
     }

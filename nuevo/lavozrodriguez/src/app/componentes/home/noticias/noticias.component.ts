@@ -35,7 +35,6 @@ export class NoticiasComponent implements OnInit{
   }
 
   verMas() {
-    console.log("masbien")
     this.cargarNoticias(15); // Cargar 15 noticias más cuando se llama a ver más
   }
 }

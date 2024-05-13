@@ -68,7 +68,7 @@ export class TelefonosComponent  implements OnInit{
     }
     this.telefonosService.telefonoAgregar(telefono).subscribe({
       next: (response) => {
-        // this.formAdmin.reset();
+        this.formAdmin.reset();
         alert("Teléfono cargado con éxito");
       },
       error: (err) => {

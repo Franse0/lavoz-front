@@ -31,7 +31,6 @@ export class GuitaTelefonicaComponent  implements OnInit{
       this.viewScroller.scrollToPosition([0,0])
       this.route.queryParams.subscribe(params => {  
         this.parametroDeRuta = params['categoria'];
-        console.log("soy el parametro",this.parametroDeRuta)
         switch(this.parametroDeRuta){
           case "cultura":
             this.cultura=true

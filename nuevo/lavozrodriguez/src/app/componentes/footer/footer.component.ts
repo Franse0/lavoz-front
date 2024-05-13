@@ -16,7 +16,6 @@ export class FooterComponent {
   mail(){}
 
   seleccionarCategoria(categoria: string) {
-    console.log(categoria)
     this.estadoCategoriaService.setCategoriaSeleccionada(categoria);
     this.router.navigate(['/all-noticias'], { queryParams: { categoria: categoria } });
   }

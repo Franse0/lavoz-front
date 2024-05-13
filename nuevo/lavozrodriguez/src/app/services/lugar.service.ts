@@ -14,7 +14,6 @@ export class LugarService {
   url: string = "https://lavozdegr.com/api";
 
 
-
   constructor(private http:HttpClient) { }
 
   lugarTodos():Observable<any>{

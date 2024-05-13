@@ -22,7 +22,6 @@ export class CardLugarComponent {
 
   ngOnInit(): void {
     if (this.router.url.includes("/admin-lugares")) {
-      console.log("Daleeee")
       this.mostrarId = true;
     }
     // console.log(this.comercios)  
@@ -53,7 +52,6 @@ export class CardLugarComponent {
 
   editar(id: number,  event:Event) {
     event.preventDefault()
-    console.log(id)
     this.lugaresService.changeNoticiaId(id);
   }
 

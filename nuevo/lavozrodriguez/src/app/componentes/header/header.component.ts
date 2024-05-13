@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit{
     })
     this.dolarService.getDolar().subscribe(data=>{
       this.dolar=data
-      console.log( "dolar",this.dolar)
     })
   }
   mostrarMenu: boolean = false; // Controla la visibilidad del menú completo
@@ -84,7 +83,6 @@ export class HeaderComponent implements OnInit{
   }
 
   seleccionarCategoria(categoria: string) {
-    console.log(categoria)
     this.estadoCategoriaService.setCategoriaSeleccionada(categoria);
     this.mostrarMenu = false;
     this.router.navigate(['/all-noticias'], { queryParams: { categoria: categoria } });
@@ -104,14 +102,12 @@ export class HeaderComponent implements OnInit{
   buscar() {
     // Verifica si el elemento input existe y tiene un valor
     if (this.buscador && this.buscador.nativeElement.value) {
-      console.log('estoy buscando', this.buscador.nativeElement.value);
       const busquedaValue = this.buscador.nativeElement.value;
       this.buscador.nativeElement.value=''  
       // Usar el servicio Router para navegar
       this.router.navigate(['/resultados-busqueda'], { queryParams: { categoria: busquedaValue } });
     } else {
       this.buscarValue = !this.buscarValue;
-      console.log(this.buscarValue);
     }
   }
   buscarConEnter(event: KeyboardEvent) {

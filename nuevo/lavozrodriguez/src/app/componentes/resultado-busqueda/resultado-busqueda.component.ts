@@ -30,9 +30,7 @@ export class ResultadoBusquedaComponent implements OnInit{
           this.noResultados=false
           this.siResultados=true
 
-          console.log("busqueda list",this.busquedaList);
         }else{
-          console.log('nada')
           this.noResultados=true
           this.siResultados=false
 

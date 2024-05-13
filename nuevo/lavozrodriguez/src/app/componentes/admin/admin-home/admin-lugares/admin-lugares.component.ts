@@ -55,7 +55,7 @@ export class AdminLugaresComponent implements OnInit{
     categoria:this.formAdmin.value.categoria,
     }
     this.lugarService.lugarAgregar(lugar).subscribe()
-    // this.formAdmin.reset()
+    this.formAdmin.reset()
     alert("lugar cargado con exito")
   }
 

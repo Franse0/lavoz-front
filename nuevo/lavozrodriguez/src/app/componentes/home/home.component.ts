@@ -15,8 +15,7 @@ noticias_mas:any;
   ngOnInit(): void {
     this.noticiasService.noticiasTodos().subscribe(data=>{
       this.noticias=data.slice(-1)
-      this.noticias_mas=data.slice(-3).reverse()
-      console.log("noticias", this.noticias_mas)
+      this.noticias_mas = data.slice(-4, -1).reverse();
 
     })
   }

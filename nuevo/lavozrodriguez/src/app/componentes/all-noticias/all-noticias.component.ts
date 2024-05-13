@@ -38,7 +38,6 @@ export class AllNoticiasComponent {
       // Obtener la categoría seleccionada del servicio de estado de categorías
       this.estadoCategoriasService.categoriaSeleccionada$.subscribe(categoria => {
         this.categoriaSeleccionada = categoria;
-        console.log("soy la categoira", this.categoriaSeleccionada)
         // Si hay una categoría seleccionada, filtrar las noticias por esa categoría
         if (categoria) {
           this.filtrarPorCategoria(categoria);
@@ -52,7 +51,6 @@ export class AllNoticiasComponent {
 
   filtrarPorCategoria(categoria: string) {
     if(categoria==="todas"){
-      console.log("la categoria es todas")
       this.noticiaService.noticiasTodos().subscribe(data=>{
         this.noticias=data.reverse()
       })
@@ -80,7 +78,6 @@ export class AllNoticiasComponent {
   }
   editar(id: number,  event:Event) {
     event.preventDefault()
-    console.log(id)
     this.noticiaService.changeNoticiaId(id);
   }
 
@@ -91,7 +88,6 @@ export class AllNoticiasComponent {
     this.noticiaService.noticiasBorrar(id).subscribe(data=>
       this.noticiaService.noticiasTodos().subscribe(data=>{
         this.noticias=data
-        console.log(data)
       }))
 }} 
 

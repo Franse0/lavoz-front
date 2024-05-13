@@ -4,7 +4,11 @@
       <div class="title">
         <h2>{{ comercio.nombre }}</h2>
       </div>
-      <div class="icons">
+      <div class="icons" *ngIf="mostrarId">
+        <i class="fa-solid fa-pen-to-square" (click)="editar(comercio.id, $event)" ></i>
+        <i class="fa-solid fa-trash link" (click)="borar(comercio.id)" ></i>
+      </div>
+      <div class="icons" *ngIf="!mostrarId">
         <a [href]="comercio.instagram" target="_blank">
           <img src="/assets/instagram.png" alt="" class="icon" />
         </a>

@@ -2,15 +2,15 @@
   <div class="all-container">
     <div class="header-container">
       <div class="widget-container dolar">
-        <span class="span">DOLAR HOY</span>
+        <span class="span">DÓLAR HOY</span>
         <table>
           <tr>
             <th>COMPRA</th>
             <th>VENTA</th>
           </tr>
           <tr>
-            <th>${{dolar.compra}} </th>
-            <th>${{dolar.venta}}</th>
+            <th>${{dolar?.compra}} </th>
+            <th>${{dolar?.venta}}</th>
           </tr>
         </table>
       </div>
@@ -25,12 +25,12 @@
         <div class="temp-container">
           <div>
             <i class="fa-solid fa-cloud"
-              >{{ convertCelcius(clima.main?.temp) }}°C</i
+              >{{ convertCelcius(clima?.main.temp) }}°C</i
             >
           </div>
           <div>
             <i class="fa-solid fa-temperature-low"
-              >{{ clima.main?.humidity }}%</i
+              >{{ clima?.main.humidity }}%</i
             >
           </div>
         </div>
@@ -52,7 +52,7 @@
         </li>
         <li class="nav-items">
           <a [routerLink]="['/guia-telefonica']" (click)="closeMenu()"
-            >GUIA TELEFONICA</a
+            >GUÍA TELEFÓNICA</a
           >
         </li>
         <li class="nav-items">
@@ -100,8 +100,8 @@
             <li (click)="seleccionarCategoria('cultura')" class="enlace">
               Cultura
             </li>
-            <li (click)="seleccionarCategoria('educacion')" class="enlace">
-              Educacion
+            <li (click)="seleccionarCategoria('educación')" class="enlace">
+              Educación
             </li>
             <li (click)="seleccionarCategoria('salud')" class="enlace">
               Salud
@@ -114,7 +114,7 @@
         </div>
         <div>
           <li class="enlace" (click)="submenuGuia()">
-            <i class="fa-solid fa-caret-right"></i>Guia Telefonica
+            <i class="fa-solid fa-caret-right"></i>Guía Telefónica
           </li>
           <ul
             class="submenu"
@@ -183,7 +183,7 @@
             <li [routerLink]="['/guia-comercios']"
             [queryParams]="{ categoria: 'cafeteria' }"
             (click)="closeMenu()"
-            class="enlace">Cafeteria</li>
+            class="enlace">Cafetería</li>
             <li [routerLink]="['/guia-comercios']"
             [queryParams]="{ categoria: 'centro-deportivo' }"
             (click)="closeMenu()"
@@ -195,11 +195,11 @@
             <li [routerLink]="['/guia-comercios']"
             [queryParams]="{ categoria: 'ferreteria' }"
             (click)="closeMenu()"
-            class="enlace">Ferreteria</li>
+            class="enlace">Ferretería</li>
             <li [routerLink]="['/guia-comercios']"
             [queryParams]="{ categoria: 'gomeria' }"
             (click)="closeMenu()"
-            class="enlace">Gomeria</li>
+            class="enlace">Gomería</li>
             <li [routerLink]="['/guia-comercios']"
             [queryParams]="{ categoria: 'pago-facil' }"
             (click)="closeMenu()"

@@ -74,7 +74,6 @@ export class LugaresComponent {
   chequearParametro(){
     this.route.queryParams.subscribe(params => {
       this.parametroDeRuta = params['categoria'];
-      console.log("soy el parametro",this.parametroDeRuta)
       switch(this.parametroDeRuta){
         case "bar/restaurante":
           this.restauranteBar=true
